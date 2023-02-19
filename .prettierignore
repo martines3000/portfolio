@@ -1,0 +1,6 @@
+.next
+.husky
+node_modules
+out
+pnpm-lock.yaml
+.vscode

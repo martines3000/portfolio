@@ -1,0 +1,70 @@
+import { format } from 'date-fns';
+import ViewsDisplay from '../../../components/ViewsDisplay';
+import { getPosts } from '../../../lib/blog';
+import { markdownToHtml } from '../../../lib/markdown';
+import { notFound } from 'next/navigation';
+import { Post } from '../../../lib/types';
+
+const Page = async ({ params: { slug } }: { params: { slug: string } }) => {
+  const post = await getBlogPost(slug);
+
+  return (
+    <div>
+      <div className="mb-10">
+        <h1 className="text-center text-3xl font-bold md:text-5xl">
+          {post.title}
+        </h1>
+        <p className="my-4 text-center text-gray-600 dark:text-gray-300">
+          {format(new Date(post.created), 'PPP')}
+          {' • '}
+          {<ViewsDisplay slug={post.slug} increment={true} />}
+        </p>
+        {post.updated && (
+          <p className="my-4 text-center text-gray-600 dark:text-gray-300">
+            Last updated: {format(new Date(post.updated), 'PPP')}
+          </p>
+        )}
+        <div className="flex flex-wrap justify-center">
+          {post.tags.map((tag) => (
+            <span
+              key={tag}
+              className="mr-2 mb-2 inline-block rounded-full bg-gray-200 px-3 py-1 text-sm font-semibold text-gray-700"
+            >
+              {tag}
+            </span>
+          ))}
+        </div>
+      </div>
+      <div className="h-full w-full">
+        <article className="prose max-w-none dark:prose-invert md:prose-lg lg:prose-xl">
+          <div
+            itemProp="articleBody"
+            dangerouslySetInnerHTML={{ __html: post.content }}
+          ></div>
+        </article>
+      </div>
+    </div>
+  );
+};
+
+export default Page;
+
+const getBlogPost = async (slug: string): Promise<Post> => {
+  const posts = (await getPosts()) || [];
+
+  const post = posts.find((post) => post.slug === slug);
+
+  if (!post) notFound();
+
+  return {
+    ...post,
+    content: markdownToHtml(post.content),
+  };
+};
+
+export async function generateStaticParams() {
+  const posts = (await getPosts()) || [];
+  return posts.map((post) => ({
+    slug: post.slug,
+  }));
+}

@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  overflow: hidden;
+  max-height: 100vh;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Select all child img tags */
+.main-content img {
+  display: inline-block;
+  height: 1.5rem;
+  padding: 0 0.5rem;
+  margin: 0;
+}
+
+.reddit-char {
+  height: 200px !important;
+}
+
+@media (min-width: 768px) {
+  .reddit-char {
+    float: right;
+  }
+}
