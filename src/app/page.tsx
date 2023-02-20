@@ -66,7 +66,7 @@ const Page = async () => {
             />
           </div>
         </div>
-        <h3 className="mb-2 text-xl font-bold">Languages</h3>
+        <h3 className="mb-2 text-2xl font-bold">Languages</h3>
         <div className="flex flex-wrap gap-2">
           {LANGUAGES.map((language) => (
             <Chip
@@ -77,7 +77,7 @@ const Page = async () => {
             />
           ))}
         </div>
-        <h3 className="mb-2 mt-6 text-xl font-bold">Frameworks</h3>
+        <h3 className="mb-2 mt-6 text-2xl font-bold">Frameworks</h3>
         <div className="flex flex-wrap gap-2">
           {FRAMEWORKS.map((framework) => (
             <Chip
@@ -87,7 +87,7 @@ const Page = async () => {
             />
           ))}
         </div>
-        <h3 className="mb-2 mt-6 text-xl font-bold">Tools</h3>
+        <h3 className="mb-2 mt-6 text-2xl font-bold">Tools</h3>
         <div className="flex flex-wrap gap-2">
           {TOOLS.map((tool) => (
             <Chip
