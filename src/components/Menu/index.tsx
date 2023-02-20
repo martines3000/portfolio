@@ -18,7 +18,7 @@ const Menu = () => {
           isOpen
             ? 'absolute inset-y-0 left-0 translate-x-0'
             : 'absolute -translate-x-full'
-        } z-30 flex h-full max-h-screen min-h-screen w-2/3 flex-none flex-col overflow-y-auto border-r-2 border-sky-800 bg-gray-300 transition-transform duration-200 ease-in-out dark:bg-black sm:w-1/3 lg:relative lg:w-44 lg:translate-x-0`}
+        } z-30 flex h-full w-2/3 flex-none flex-col overflow-y-auto border-r-2 border-sky-800 bg-gray-300 transition-transform duration-200 ease-in-out dark:bg-black sm:w-1/3 lg:relative lg:w-44 lg:translate-x-0`}
       >
         <div className="flex h-12 items-center justify-start border-b-2 border-sky-800 p-3">
           <h1 className="text-sm font-semibold dark:text-white">

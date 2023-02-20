@@ -29,9 +29,9 @@ export default function RootLayout({
         )}
       >
         <Providers>
-          <div className="relative flex max-h-screen min-h-screen w-full">
+          <div className="relative flex h-screen max-h-full w-full">
             <Menu />
-            <main className="max-h-screen min-h-screen flex-1 overflow-hidden">
+            <main className="max-h-full flex-1 overflow-hidden">
               <Header />
               <div
                 className={

@@ -3,9 +3,9 @@ import Menu from '../Menu';
 
 const Layout = ({ children }: { children: JSX.Element }) => {
   return (
-    <div className="relative flex max-h-screen min-h-screen w-full">
+    <div className="relative flex w-full">
       <Menu />
-      <main className="max-h-screen min-h-screen flex-1 overflow-hidden">
+      <main className="max-h-full flex-1  overflow-hidden">
         <Header />
         <div
           className={
