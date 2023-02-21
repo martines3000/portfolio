@@ -68,14 +68,14 @@ const ProjectCard = ({
             key={slug}
             href={`/projects/${slug}`}
           >
-            <h3
+            <h2
               className={clsx(
                 'text-center text-2xl font-semibold tracking-tight underline transition-transform duration-500 [transform-style:preserve-3d]',
                 clicked ? '[transform:rotateY(180deg)]' : ''
               )}
             >
               {title}
-            </h3>
+            </h2>
           </Link>
         </div>
         <div className="absolute bottom-0 w-full">
