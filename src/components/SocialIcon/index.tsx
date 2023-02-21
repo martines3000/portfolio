@@ -22,7 +22,12 @@ const SocialIcon = ({ icon, href }: SocialIconProps) => {
   const Icon = Icons[icon];
 
   return (
-    <a href={href} target="_blank" rel="noopener noreferrer">
+    <a
+      aria-label={`link to ${icon}`}
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+    >
       <Icon className={`h-[32px] w-[32px] fill-current`} />
     </a>
   );
