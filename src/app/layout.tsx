@@ -88,7 +88,7 @@ export default function RootLayout({
         )}
       >
         <Providers>
-          <div className="relative flex max-h-full w-full max-w-full">
+          <div className="relative flex h-full max-h-full w-full max-w-full">
             <Menu />
             <main className="flex-1 overflow-hidden">
               <Header />

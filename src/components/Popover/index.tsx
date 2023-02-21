@@ -12,7 +12,9 @@ const Popover = ({ children, description }: PopoverProps) => {
   return (
     <div className="relative inline-block text-left">
       <PopoverPrimitive.Root>
-        <PopoverPrimitive.Trigger asChild>{children}</PopoverPrimitive.Trigger>
+        <PopoverPrimitive.Trigger asChild>
+          <button>{children}</button>
+        </PopoverPrimitive.Trigger>
         <PopoverPrimitive.Portal>
           <PopoverPrimitive.Content
             align="center"
@@ -33,6 +35,7 @@ const Popover = ({ children, description }: PopoverProps) => {
             </p>
 
             <PopoverPrimitive.Close
+              aria-label="Close"
               className={clsx(
                 'absolute top-4 right-3.5 inline-flex items-center justify-center rounded-full p-1',
                 'focus:outline-none focus-visible:ring focus-visible:ring-sky-500/75'
