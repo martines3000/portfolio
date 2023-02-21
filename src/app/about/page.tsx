@@ -1,4 +1,14 @@
 import { getAboutInfo } from '../../lib/datocms';
+import ogImage from '../../lib/ogImage';
+
+export const metadata = {
+  title: 'About',
+  description:
+    "Here, you'll find general information about me, my work, and my interests.",
+  openGraph: {
+    images: [ogImage({ title: 'About' })],
+  },
+};
 
 export default async function Page() {
   const about = await getAboutInfo();

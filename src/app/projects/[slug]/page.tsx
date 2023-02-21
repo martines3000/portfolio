@@ -2,6 +2,51 @@ import { markdownToHtml } from '../../../lib/markdown';
 import { notFound } from 'next/navigation';
 import { Project } from '../../../lib/types';
 import { getProjects } from '../../../lib/projects';
+import { Metadata } from 'next';
+import ogImage from '../../../lib/ogImage';
+import { getOrigin } from '../../../lib/getOrigin';
+
+export async function generateMetadata({
+  params: { slug },
+}: {
+  params: { slug: string };
+}): Promise<Metadata | undefined> {
+  const projects = (await getProjects()) || [];
+
+  let project = projects.find((project) => project.slug === slug);
+
+  if (!project) return;
+
+  const image = ogImage({
+    title: project.title,
+    url: project.ogImage,
+  });
+
+  const origin = getOrigin();
+
+  return {
+    title: project.title,
+    description: project.summary,
+    openGraph: {
+      title: project.title,
+      description: project.summary,
+      publishedTime: project.created,
+      type: 'article',
+      url: `${origin}/project/${project.slug}`,
+      images: [
+        {
+          url: image,
+        },
+      ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: project.title,
+      description: project.summary,
+      images: [image],
+    },
+  };
+}
 
 const Page = async ({ params: { slug } }: { params: { slug: string } }) => {
   const project = await getProject(slug);

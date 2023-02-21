@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-css-tags */
 import '../styles/globals.css';
 import Header from '../components/Header';
 import Menu from '../components/Menu';
@@ -15,6 +16,48 @@ const ibm_plex_sans = IBM_Plex_Sans({
   variable: '--font-ibm-plex-sans',
 });
 
+// https://beta.nextjs.org/docs/api-reference/metadata
+export const metadata = {
+  title: {
+    default: 'Martin Domajnko',
+    template: '%s | Martin Domajnko',
+  },
+  openGraph: {
+    title: 'Martin Domajnko',
+    description:
+      'Developer, blockchain enthusiast, and self-improvement addict.',
+    url: 'https://portfolio.skippy-ai.com',
+    siteName: 'Martin Domajnko',
+    images: [
+      {
+        url: 'https://portfolio.skippy-ai.com/api/og',
+        width: 1920,
+        height: 1080,
+      },
+    ],
+    locale: 'en-US',
+    type: 'website',
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  twitter: {
+    title: 'Martin Domajnko',
+    card: 'summary_large_image',
+  },
+  icons: {
+    shortcut: '/favicon.ico',
+  },
+};
+
 export default function RootLayout({
   children,
 }: {
@@ -22,6 +65,22 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <head>
+        <link
+          href="/themes/tomorrow-night-bright.css"
+          rel="stylesheet"
+          media="(prefers-color-scheme: dark)"
+          // @ts-ignore
+          precedence="default"
+        ></link>
+        <link
+          href="/themes/github.css"
+          rel="stylesheet"
+          media="(prefers-color-scheme: light)"
+          // @ts-ignore
+          precedence="default"
+        ></link>
+      </head>
       <body
         className={clsx(
           `${ibm_plex_sans.variable} font-sans`,

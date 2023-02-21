@@ -3,21 +3,6 @@ import Avatar from '../components/Avatar';
 import AvatarLoading from '../components/Avatar/loading';
 import Chip from '../components/Chip';
 import { LANGUAGES, FRAMEWORKS, TOOLS, OTHER } from '../constants/homeInfo';
-import { getOrigin } from '../lib/getOrigin';
-
-export const metadata = {
-  description: 'Developer, blockchain enthusiast, and self-improvement addict.',
-  openGraph: {
-    title: 'Martin Domajnko',
-    description:
-      'Developer, blockchain enthusiast, and self-improvement addict.',
-    url: 'https://portfolio.skippy-ai.com/',
-    siteName: 'Martin Domajnko',
-    images: [`${getOrigin()}/api/og`],
-    locale: 'en-US',
-    type: 'website',
-  },
-};
 
 const Page = async () => {
   return (

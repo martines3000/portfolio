@@ -1,10 +1,15 @@
+import { Metadata } from 'next';
 import { Suspense } from 'react';
 import BlogPosts from '../../components/BlogPosts';
+import ogImage from '../../lib/ogImage';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'Blog',
   description:
     "Here, you'll find a collection of my thoughts and experiences using different technology.",
+  openGraph: {
+    images: [ogImage({ title: 'Blog' })],
+  },
 };
 
 export default async function Page() {

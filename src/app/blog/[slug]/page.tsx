@@ -4,6 +4,51 @@ import { getPosts } from '../../../lib/blog';
 import { markdownToHtml } from '../../../lib/markdown';
 import { notFound } from 'next/navigation';
 import { Post } from '../../../lib/types';
+import type { Metadata } from 'next';
+import ogImage from '../../../lib/ogImage';
+import { getOrigin } from '../../../lib/getOrigin';
+
+export async function generateMetadata({
+  params: { slug },
+}: {
+  params: { slug: string };
+}): Promise<Metadata | undefined> {
+  const posts = (await getPosts()) || [];
+
+  let post = posts.find((post) => post.slug === slug);
+
+  if (!post) return;
+
+  const image = ogImage({
+    title: post.title,
+    url: post.ogImage,
+  });
+
+  const origin = getOrigin();
+
+  return {
+    title: post.title,
+    description: post.summary,
+    openGraph: {
+      title: post.title,
+      description: post.summary,
+      publishedTime: post.created,
+      type: 'article',
+      url: `${origin}/blog/${post.slug}`,
+      images: [
+        {
+          url: image,
+        },
+      ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: post.title,
+      description: post.summary,
+      images: [image],
+    },
+  };
+}
 
 const Page = async ({ params: { slug } }: { params: { slug: string } }) => {
   const post = await getBlogPost(slug);

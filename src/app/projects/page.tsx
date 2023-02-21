@@ -1,5 +1,15 @@
 import { Suspense } from 'react';
 import ProjectsShowcase from '../../components/ProjectsShowcase';
+import ogImage from '../../lib/ogImage';
+
+export const metadata = {
+  title: 'Projects',
+  description:
+    "Here, you'll find a collection of the projects I've worked on professionally and things I built for fun in my free time.",
+  openGraph: {
+    images: [ogImage({ title: 'Projects' })],
+  },
+};
 
 export default async function Page() {
   return (
