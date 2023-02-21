@@ -23,6 +23,7 @@ const Chip = ({ label, color, description, className }: ChipProps) => {
     return (
       <Popover description={description}>
         <span
+          aria-label={`Chip ${label}`}
           className={clsx(
             colorVariants[color],
             'cursor-pointer select-none rounded-full border-2 py-1 px-3 text-sm font-medium'
