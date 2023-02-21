@@ -4,6 +4,11 @@ import AvatarLoading from '../components/Avatar/loading';
 import Chip from '../components/Chip';
 import { LANGUAGES, FRAMEWORKS, TOOLS, OTHER } from '../constants/homeInfo';
 
+export const metadata = {
+  description:
+    "Here, you'll find a short description about me and a compact list of my skills.",
+};
+
 const Page = async () => {
   return (
     <div className="mb-12 w-full">
