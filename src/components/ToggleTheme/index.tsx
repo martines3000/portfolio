@@ -23,6 +23,7 @@ const ToggleTheme = () => {
        ${resolvedTheme === 'dark' ? 'text-gray-200' : 'text-gray-700'}`}
       type="button"
       onClick={toggleTheme}
+      aria-label="Theme toggle"
     >
       {resolvedTheme === 'dark' ? (
         <MoonIcon className={`h-[14px] w-[14px] fill-current`} />
