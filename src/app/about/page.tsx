@@ -25,7 +25,7 @@ export default async function Page() {
   const { content } = about;
 
   return (
-    <div className="mt-[-56px] flex max-h-full flex-col">
+    <div className="mt-[-56px] flex flex-col">
       <div className="flex w-full flex-1 flex-col">
         <div className="h-full w-full">
           <article className="prose max-w-none dark:prose-invert md:prose-lg lg:prose-xl">
