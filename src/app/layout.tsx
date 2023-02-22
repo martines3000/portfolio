@@ -6,6 +6,7 @@ import { Providers } from '../providers';
 
 import { IBM_Plex_Sans } from '@next/font/google';
 import clsx from 'clsx';
+import Head from 'next/head';
 
 const ibm_plex_sans = IBM_Plex_Sans({
   subsets: ['latin'],
@@ -65,7 +66,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <head>
+      <Head>
         <link
           href="/themes/tomorrow-night-bright.css"
           rel="stylesheet"
@@ -80,7 +81,46 @@ export default function RootLayout({
           // @ts-ignore
           precedence="default"
         ></link>
-      </head>
+        <link rel="manifest" href="/manifest.json" />
+        <link
+          href="/icons/icon-16x16.png"
+          rel="icon"
+          type="image/png"
+          sizes="16x16"
+        />
+        <link
+          href="/icons/icon-32x32.png"
+          rel="icon"
+          type="image/png"
+          sizes="32x32"
+        />
+        <link
+          href="/icons/icon-48x48.png"
+          rel="icon"
+          type="image/png"
+          sizes="48x48"
+        />
+        <link
+          href="/icons/icon-180x180.png"
+          rel="icon"
+          type="image/png"
+          sizes="180x180"
+        />
+        <link
+          href="/icons/icon-192x192.png"
+          rel="icon"
+          type="image/png"
+          sizes="192x192"
+        />
+        <link
+          href="/icons/icon-512x512.png"
+          rel="icon"
+          type="image/png"
+          sizes="512x512"
+        />
+        <link rel="apple-touch-icon" href="/icons/icon-192x192.png"></link>
+        <meta name="theme-color" content="#000" />
+      </Head>
       <body
         className={clsx(
           `${ibm_plex_sans.variable} font-sans`,
