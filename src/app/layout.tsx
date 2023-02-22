@@ -3,7 +3,7 @@ import '../styles/globals.css';
 import Header from '../components/Header';
 import Menu from '../components/Menu';
 import { Providers } from '../providers';
-
+import AnalyticsWrapper from '../components/AnalyticsWrapper';
 import { IBM_Plex_Sans } from '@next/font/google';
 import clsx from 'clsx';
 import Head from 'next/head';
@@ -144,6 +144,7 @@ export default function RootLayout({
             </main>
           </div>
         </Providers>
+        <AnalyticsWrapper />
       </body>
     </html>
   );
