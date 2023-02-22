@@ -38,6 +38,11 @@ const Page = async () => {
       <div className="mt-8 sm:mt-6 ">
         <div className="mb-5">
           <h2 className="mb-2 text-2xl font-bold">Skills</h2>
+          {/* Background text */}
+          <p className="mb-4 text-sm text-gray-800 dark:text-gray-200">
+            Clicking on specific skills, languages or tools will show you some
+            extra information.
+          </p>
           <div className="flex flex-wrap gap-2">
             <Chip
               label="Advanced"

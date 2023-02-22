@@ -12,9 +12,7 @@ const Popover = ({ children, description }: PopoverProps) => {
   return (
     <div className="relative inline-block text-left">
       <PopoverPrimitive.Root>
-        <PopoverPrimitive.Trigger asChild>
-          <button>{children}</button>
-        </PopoverPrimitive.Trigger>
+        <PopoverPrimitive.Trigger asChild>{children}</PopoverPrimitive.Trigger>
         <PopoverPrimitive.Portal>
           <PopoverPrimitive.Content
             align="center"

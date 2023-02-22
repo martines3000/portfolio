@@ -22,14 +22,14 @@ const Chip = ({ label, color, description, className }: ChipProps) => {
   if (description)
     return (
       <Popover description={description}>
-        <span
+        <button
           className={clsx(
             colorVariants[color],
             'cursor-pointer select-none rounded-full border-2 py-1 px-3 text-sm font-medium'
           )}
         >
           {label}
-        </span>
+        </button>
       </Popover>
     );
 
