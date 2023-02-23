@@ -38,3 +38,7 @@ next-env.d.ts
 .yarn/cache
 .yarn/install-state.gz
 .yarn/unplugged
+
+# pwa
+public/*.js
+public/*.js.map
