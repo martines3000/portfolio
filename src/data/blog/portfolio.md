@@ -1,6 +1,6 @@
 ---
 title: Portfolio website built with Next.js and Markdown
-created: '2023-02-12T08:00:00.000Z'
+created: '2023-02-23T08:00:00.000Z'
 summary: Building my portfolio website using Next.js 13, PlanetScale, Prisma, DatoCMS and Tailwind.
 tags: ['Next.js', 'Markdown', 'PlanetScale', 'Prisma', 'DatoCMS', 'Tailwind']
 ---
@@ -27,7 +27,7 @@ The main reason I decided to build my own portfolio website was to have a platfo
 
 The Markdown content for the website is stored in the `/data` directory and is split into `blog` and `projects` subdirectories. Using dynamic route segments `/blog/[slug]` and `generateStaticParams` the blog posts and projects are read at build time from the disk and statically rendered. In addition, I included extra metadata about my projects and blog posts in the front-matter of the Markdown files and utilized [gray-matter](https://github.com/jonschlinkert/gray-matter) to parse it.
 
-```ts
+```typescript
 // Function showing how posts are read and the extraction of their metadata
 export const getPosts = async (): Promise<Post[]> => {
   const postDir = path.join(process.cwd(), 'src/data/blog');
@@ -79,3 +79,11 @@ For now the component looks like this:
 ![Spotify component](/images/spotify.png)
 
 It includes the song title, the artist and the album cover image.
+
+## Perfect Lighthouse score
+
+I also managed to achieve a perfect lighthouse score, excluding the PWA score. The `app` directory is still in beta and is yet not fully supported by `next-pwa`. The Lighthouse report can be found here [link](https://googlechrome.github.io/lighthouse/viewer/?gist=782cfa08a9937f85a9a47013d5d54b03).
+
+## Conclusion
+
+And this is my website, my home on the internet. I learnt a great deal from the insights of others, and I hope you did too from reading this. As time progresses, I aim to enhance this website with fresh and innovative concepts. So, keep an eye out for my forthcoming posts!

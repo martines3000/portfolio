@@ -5,6 +5,8 @@ import { getProjects } from '../../../lib/projects';
 import { Metadata } from 'next';
 import ogImage from '../../../lib/ogImage';
 import { getOrigin } from '../../../lib/getOrigin';
+import { format } from 'date-fns';
+import { ExternalLink } from '../../../components/ExternalLink';
 
 export async function generateMetadata({
   params: { slug },
@@ -50,13 +52,21 @@ export async function generateMetadata({
 
 const Page = async ({ params: { slug } }: { params: { slug: string } }) => {
   const project = await getProject(slug);
-
+  console.log(project);
   return (
     <div>
       <div className="mb-10">
         <h1 className="mb-4 text-center text-3xl font-bold md:text-5xl">
           {project.title}
         </h1>
+        <p className="my-4 text-center text-gray-600 dark:text-gray-300">
+          {format(new Date(project.created), 'PPP')}
+        </p>
+        {project.updated && (
+          <p className="my-4 text-center text-gray-600 dark:text-gray-300">
+            Last updated: {format(new Date(project.updated), 'PPP')}
+          </p>
+        )}
         <div className="flex flex-wrap justify-center">
           {project.tags.map((tag) => (
             <span
@@ -66,6 +76,14 @@ const Page = async ({ params: { slug } }: { params: { slug: string } }) => {
               {tag}
             </span>
           ))}
+        </div>
+        <div className="mt-2 flex w-full justify-center gap-x-4">
+          {project.website && (
+            <ExternalLink href={project.website} value="Website" />
+          )}
+          {project.repository && (
+            <ExternalLink href={project.repository} value="Repository" />
+          )}
         </div>
       </div>
       <div className="h-full w-full">

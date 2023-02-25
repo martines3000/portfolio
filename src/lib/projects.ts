@@ -23,6 +23,7 @@ export const getProjects = async (): Promise<Project[]> => {
           tags,
           ogImage,
           repository,
+          website,
         },
       } = matter(fileContents);
 
@@ -36,6 +37,7 @@ export const getProjects = async (): Promise<Project[]> => {
         content,
         ogImage,
         repository,
+        website,
       };
     })
   );

@@ -28,7 +28,12 @@ const nextConfig = {
   output: 'standalone',
   // https://nextjs.org/docs/messages/next-image-unconfigured-host
   images: {
-    domains: ['www.datocms-assets.com', 'i.scdn.co', 'localhost'],
+    domains: [
+      'www.datocms-assets.com',
+      'i.scdn.co',
+      'localhost',
+      'portfolio.skippy-ai.com',
+    ],
   },
   // Security headers and CSP
   // https://nextjs.org/docs/advanced-features/security-headers

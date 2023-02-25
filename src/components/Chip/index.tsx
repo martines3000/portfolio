@@ -1,9 +1,11 @@
 import clsx from 'clsx';
 import Popover from '../Popover';
 
+export const chipColors = ['green', 'yellow', 'red', 'gray', 'blue'] as const;
+
 type ChipProps = {
   label: string;
-  color: 'green' | 'yellow' | 'red' | 'gray';
+  color: (typeof chipColors)[number];
   description?: string;
   className?: string;
 };
@@ -15,8 +17,8 @@ const Chip = ({ label, color, description, className }: ChipProps) => {
     yellow:
       'bg-yellow-200 text-yellow-800 dark:bg-yellow-800 dark:text-yellow-200 border-yellow-400 dark:border-yellow-400',
     red: 'bg-red-200 text-red-800 dark:bg-red-800 dark:text-red-200 border-red-400 dark:border-red-400',
-
     gray: 'bg-gray-200 text-gray-800 dark:bg-gray-800 dark:text-gray-200 border-gray-400 dark:border-gray-400',
+    blue: 'bg-blue-200 text-blue-800 dark:bg-blue-800 dark:text-blue-200 border-blue-400 dark:border-blue-400',
   };
 
   if (description)

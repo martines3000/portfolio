@@ -6,7 +6,6 @@ import { Providers } from '../providers';
 import AnalyticsWrapper from '../components/AnalyticsWrapper';
 import { IBM_Plex_Sans } from '@next/font/google';
 import clsx from 'clsx';
-import Head from 'next/head';
 
 const ibm_plex_sans = IBM_Plex_Sans({
   subsets: ['latin'],
@@ -66,7 +65,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <Head>
+      <head>
         <link
           href="/themes/tomorrow-night-bright.css"
           rel="stylesheet"
@@ -120,7 +119,7 @@ export default function RootLayout({
         />
         <link rel="apple-touch-icon" href="/icons/icon-192x192.png"></link>
         <meta name="theme-color" content="#000" />
-      </Head>
+      </head>
       <body
         className={clsx(
           `${ibm_plex_sans.variable} font-sans`,

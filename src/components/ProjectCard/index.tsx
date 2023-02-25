@@ -91,8 +91,8 @@ const ProjectCard = ({
                   'transition-transform duration-500 [transform-style:preserve-3d]',
                   clicked ? '[transform:rotateY(180deg)]' : ''
                 )}
-                color="yellow"
-                label="Rust"
+                color="blue"
+                label={tag}
               />
             ))}
           </div>
