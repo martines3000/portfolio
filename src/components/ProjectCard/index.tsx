@@ -46,7 +46,7 @@ const ProjectCard = ({
             )}
             alt="Project image"
             src={
-              image.startsWith('local:') ? image.replace('local:', '') : image
+              image.startsWith('local:') ? image.replace('local:', '/') : image
             }
             fill
           />
