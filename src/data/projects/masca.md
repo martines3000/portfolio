@@ -3,7 +3,7 @@ title: SSI Snap
 created: '2023-02-23T08:00:00.000Z'
 summary: 'SSI Snap is a MetaMask Snap that adds support for SSI: it can manage DIDs, store VCs, and create the VPs. SSI Snap works on existing MetaMask accounts to create new DIDs, without the need to create new private keys and worry about their security!'
 tags: ['SSI', 'Web3', 'MetaMask']
-ogImage: 'local:masca_2.png'
+ogImage: 'local:masca.png'
 website: 'https://blockchain-lab-um.github.io/ssi-snap-docs/'
 repository: 'https://github.com/blockchain-lab-um/ssi-snap/tree/develop'
 ---
