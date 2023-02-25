@@ -52,7 +52,7 @@ export async function generateMetadata({
 
 const Page = async ({ params: { slug } }: { params: { slug: string } }) => {
   const project = await getProject(slug);
-  console.log(project);
+
   return (
     <div>
       <div className="mb-10">
