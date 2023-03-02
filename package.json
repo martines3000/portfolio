@@ -13,7 +13,8 @@
     "lint:prettier": "prettier . --check",
     "lint:tsc": "tsc -p tsconfig.json --noEmit --incremental false",
     "lint:stylelint": "stylelint \"**/*.{css,scss}\"",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "postbuild": "next-sitemap --config=next-sitemap.config.js"
   },
   "dependencies": {
     "@heroicons/react": "^2.0.16",
@@ -33,6 +34,7 @@
     "marked": "^4.2.2",
     "motion": "^10.14.2",
     "next": "13.2.1",
+    "next-sitemap": "^3.1.55",
     "next-themes": "^0.2.1",
     "react": "18.2.0",
     "react-datocms": "^4.0.8",
