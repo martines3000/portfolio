@@ -1,4 +1,4 @@
-import SocialIcon from '../SocialIcon';
+import SocialIcon from '@/components/SocialIcon';
 
 const AvatarLoading = () => {
   return (
@@ -8,7 +8,7 @@ const AvatarLoading = () => {
           <div className="pb-3">
             <div className="h-[128px] w-[128px] animate-pulse rounded-full bg-gray-200 dark:bg-gray-800" />
           </div>
-          <div className="mt-2 mb-4 flex w-full flex-col space-y-2">
+          <div className="mb-4 mt-2 flex w-full flex-col space-y-2">
             <div className="h-3 w-full animate-pulse rounded-full bg-gray-200 dark:bg-gray-800" />
             <div className="h-3.5 w-full animate-pulse rounded-full bg-gray-200 dark:bg-gray-800" />
           </div>

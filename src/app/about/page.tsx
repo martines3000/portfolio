@@ -1,5 +1,5 @@
-import { getAboutInfo } from '../../lib/datocms';
-import ogImage from '../../lib/ogImage';
+import { getAboutInfo } from '@/lib/datocms';
+import ogImage from '@/lib/ogImage';
 
 export const metadata = {
   title: 'About',

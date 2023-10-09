@@ -1,15 +1,16 @@
 import { Suspense } from 'react';
+
+import Chip from '@/components/Chip';
 import Avatar from '../components/Avatar';
 import AvatarLoading from '../components/Avatar/loading';
-import Chip from '../components/Chip';
-import { LANGUAGES, FRAMEWORKS, TOOLS, OTHER } from '../constants/homeInfo';
+import { FRAMEWORKS, LANGUAGES, OTHER, TOOLS } from '../constants/homeInfo';
 
 export const metadata = {
   description:
     "Here, you'll find a short description about me and a compact list of my skills.",
 };
 
-const Page = async () => {
+export default function Page() {
   return (
     <div className="mb-12 w-full">
       <div className="flex flex-col items-center md:flex-row md:space-x-6">
@@ -30,7 +31,6 @@ const Page = async () => {
         </div>
         <div className="md:min-w-max">
           <Suspense fallback={<AvatarLoading />}>
-            {/* @ts-expect-error Async Server Component */}
             <Avatar />
           </Suspense>
         </div>
@@ -67,7 +67,7 @@ const Page = async () => {
             <Chip
               key={language.name}
               label={language.name}
-              color={language.color as any}
+              color={language.color}
               description={language.description}
             />
           ))}
@@ -78,7 +78,7 @@ const Page = async () => {
             <Chip
               key={framework.name}
               label={framework.name}
-              color={framework.color as any}
+              color={framework.color}
             />
           ))}
         </div>
@@ -88,7 +88,7 @@ const Page = async () => {
             <Chip
               key={tool.name}
               label={tool.name}
-              color={tool.color as any}
+              color={tool.color}
               description={tool.description}
             />
           ))}
@@ -105,6 +105,4 @@ const Page = async () => {
       </div>
     </div>
   );
-};
-
-export default Page;
+}

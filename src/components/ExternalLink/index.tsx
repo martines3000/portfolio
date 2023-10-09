@@ -1,7 +1,7 @@
-type ExternalLinkProps = {
+interface ExternalLinkProps {
   href: string;
   value: string;
-};
+}
 
 export const ExternalLink = ({ href, value }: ExternalLinkProps) => {
   return (

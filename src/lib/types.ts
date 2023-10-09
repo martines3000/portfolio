@@ -1,13 +1,13 @@
-export type NowPlayingSong = {
+export interface NowPlayingSong {
   album: string;
   albumImageUrl: string;
   artist: string;
   isPlaying: boolean;
   songUrl: string;
   title: string;
-};
+}
 
-export type Post = {
+export interface Post {
   title: string;
   slug: string;
   created: string;
@@ -16,14 +16,14 @@ export type Post = {
   tags: string[];
   summary: string;
   content: string;
-};
+}
 
-export type Views = {
+export interface Views {
   id: string;
   count: number;
-};
+}
 
-export type Project = {
+export interface Project {
   title: string;
   slug: string;
   created: string;
@@ -34,4 +34,4 @@ export type Project = {
   ogImage: string;
   repository?: string;
   website?: string;
-};
+}

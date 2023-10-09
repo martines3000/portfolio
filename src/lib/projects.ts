@@ -1,6 +1,7 @@
 import { readdir, readFile } from 'fs/promises';
 import path from 'path';
 import matter from 'gray-matter';
+
 import { Project } from './types';
 
 export const getProjects = async (): Promise<Project[]> => {
@@ -38,8 +39,8 @@ export const getProjects = async (): Promise<Project[]> => {
         ogImage,
         repository,
         website,
-      };
-    })
+      } as Project;
+    }),
   );
 
   return projects;

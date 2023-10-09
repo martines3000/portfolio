@@ -1,7 +1,9 @@
-import { format } from 'date-fns';
+import { Suspense } from 'react';
 import Link from 'next/link';
-import { Post } from '../../lib/types';
-import ViewsDisplay from '../ViewsDisplay';
+import { format } from 'date-fns';
+
+import { Post } from '@/lib/types';
+import ViewsDisplay from '@/components/ViewsDisplay';
 
 export const PostPreview = ({ title, slug, created, content }: Post) => {
   return (
@@ -13,7 +15,9 @@ export const PostPreview = ({ title, slug, created, content }: Post) => {
             {format(new Date(created), 'PPP')}
           </p>
           <p className="text-sm font-light text-gray-600 dark:text-gray-100 md:text-base">
-            <ViewsDisplay slug={slug} />
+            <Suspense fallback={<span>...</span>}>
+              <ViewsDisplay slug={slug} />
+            </Suspense>
           </p>
         </div>
         <div className="mt-4 sm:pr-20">

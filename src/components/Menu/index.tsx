@@ -1,11 +1,12 @@
 'use client';
 
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
+
+import { useNavStore } from '@/stores/navStore';
 import { headerLinks } from '../../constants/headerLinks';
-import { useNavStore } from '../../stores/navStore';
 import Spotify from '../Spotify';
 import { SidebarOverlay } from './overlay';
-import { usePathname } from 'next/navigation';
 
 const Menu = () => {
   const isOpen = useNavStore((state) => state.isOpen);

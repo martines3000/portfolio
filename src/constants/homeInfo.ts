@@ -1,4 +1,11 @@
-export const LANGUAGES = [
+import { chipColors } from '@/components/Chip';
+
+export const LANGUAGES: {
+  name: string;
+  level: 'Advanced' | 'Intermediate' | 'Beginner';
+  color: (typeof chipColors)[number];
+  description: string;
+}[] = [
   {
     name: 'TypeScript',
     level: 'Advanced',
@@ -42,7 +49,11 @@ export const LANGUAGES = [
   },
 ];
 
-export const FRAMEWORKS = [
+export const FRAMEWORKS: {
+  name: string;
+  level: 'Advanced' | 'Intermediate' | 'Beginner';
+  color: (typeof chipColors)[number];
+}[] = [
   {
     name: 'React',
     level: 'Advanced',
@@ -80,7 +91,12 @@ export const FRAMEWORKS = [
   },
 ];
 
-export const TOOLS = [
+export const TOOLS: {
+  name: string;
+  level: 'Advanced' | 'Intermediate' | 'Beginner';
+  color: (typeof chipColors)[number];
+  description?: string;
+}[] = [
   {
     name: 'Docker',
     level: 'Advanced',
@@ -186,7 +202,7 @@ export const OTHER = [
   },
 ];
 
-const SKILLS = [
+export const SKILLS = [
   {
     title: 'Languages',
     skills: LANGUAGES,

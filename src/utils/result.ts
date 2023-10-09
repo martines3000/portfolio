@@ -12,5 +12,5 @@ export type Result<T> = {
 );
 
 export const isError = <T>(
-  result: Result<T>
+  result: Result<T>,
 ): result is { success: false; error: Error } => !result.success;

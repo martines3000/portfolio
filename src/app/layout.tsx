@@ -1,11 +1,13 @@
 /* eslint-disable @next/next/no-css-tags */
 import '../styles/globals.css';
-import Header from '../components/Header';
-import Menu from '../components/Menu';
-import { Providers } from '../providers';
-import AnalyticsWrapper from '../components/AnalyticsWrapper';
-import { IBM_Plex_Sans } from '@next/font/google';
+
+import { IBM_Plex_Sans } from 'next/font/google';
 import clsx from 'clsx';
+
+import AnalyticsWrapper from '@/components/AnalyticsWrapper';
+import Header from '@/components/Header';
+import Menu from '@/components/Menu';
+import { Providers } from '../providers';
 
 const ibm_plex_sans = IBM_Plex_Sans({
   subsets: ['latin'],
@@ -126,7 +128,7 @@ export default function RootLayout({
       <body
         className={clsx(
           `${ibm_plex_sans.variable} font-sans`,
-          'bg-white text-black dark:bg-black dark:text-white'
+          'bg-white text-black dark:bg-black dark:text-white',
         )}
       >
         <Providers>

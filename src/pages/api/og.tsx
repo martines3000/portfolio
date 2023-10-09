@@ -1,13 +1,13 @@
 /* eslint-disable @next/next/no-img-element */
-import { ImageResponse } from '@vercel/og';
 import { NextRequest } from 'next/server';
+import { ImageResponse } from '@vercel/og';
 
 export const config = {
   runtime: 'edge',
 };
 
 const font = fetch(
-  new URL('../../../public/fonts/Karla-Bold.ttf', import.meta.url)
+  new URL('../../../public/fonts/Karla-Bold.ttf', import.meta.url),
 ).then((res) => res.arrayBuffer());
 
 export default async function handler(req: NextRequest) {
@@ -69,10 +69,10 @@ export default async function handler(req: NextRequest) {
             style: 'normal',
           },
         ],
-      }
+      },
     );
-  } catch (e: any) {
-    console.log(`${e.message}`);
+  } catch (e: unknown) {
+    console.log(e);
     return new Response(`Failed to generate the image`, {
       status: 500,
     });

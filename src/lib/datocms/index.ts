@@ -1,4 +1,5 @@
 import { gql } from 'graphql-request';
+
 import { markdownToHtml } from '../markdown';
 import { request } from './utils';
 
@@ -30,13 +31,12 @@ const ABOUT_QUERY = gql`
 `;
 
 const getAbout = async () => {
-  const data = await request(ABOUT_QUERY);
+  const data: any = await request(ABOUT_QUERY);
   return data?.about as About;
 };
 
 export const getAboutInfo = async (): Promise<About | null> => {
   const about = (await getAbout()) || null;
-
   if (!about) return null;
 
   return {

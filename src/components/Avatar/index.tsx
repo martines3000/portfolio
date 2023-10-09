@@ -1,8 +1,9 @@
 import Image from 'next/image';
-import { getAboutInfo } from '../../lib/datocms';
-import SocialIcon from '../SocialIcon';
 
-const Avatar = async () => {
+import { getAboutInfo } from '@/lib/datocms';
+import SocialIcon from '@/components/SocialIcon';
+
+export default async function Avatar() {
   const about = await getAboutInfo();
 
   // Render skeleton
@@ -40,6 +41,4 @@ const Avatar = async () => {
       </div>
     </div>
   );
-};
-
-export default Avatar;
+}

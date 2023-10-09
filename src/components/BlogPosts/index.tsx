@@ -1,6 +1,6 @@
-import { getPosts } from '../../lib/blog';
-import { markdownToHtml } from '../../lib/markdown';
-import { Post } from '../../lib/types';
+import { getPosts } from '@/lib/blog';
+import { markdownToHtml } from '@/lib/markdown';
+import { Post } from '@/lib/types';
 import Blog from './client';
 
 const getBlogPosts = async (): Promise<Post[]> => {

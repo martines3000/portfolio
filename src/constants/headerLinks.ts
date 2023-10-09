@@ -9,7 +9,10 @@ export const headerLinks: {
   href: string;
   title: string;
   icon: React.ForwardRefExoticComponent<
-    React.SVGProps<SVGSVGElement> & { title?: string; titleId?: string }
+    Omit<React.SVGProps<SVGSVGElement>, 'ref'> & {
+      title?: string | undefined;
+      titleId?: string | undefined;
+    } & React.RefAttributes<SVGSVGElement>
   >;
 }[] = [
   { href: '/', title: 'Home', icon: HomeIcon },

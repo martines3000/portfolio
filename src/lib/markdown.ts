@@ -1,5 +1,6 @@
-import { marked } from 'marked';
 import hl from 'highlight.js';
+import { marked } from 'marked';
+
 const { highlight, highlightAuto } = hl;
 
 // Inspired by:

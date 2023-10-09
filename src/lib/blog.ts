@@ -1,6 +1,7 @@
 import { readdir, readFile } from 'fs/promises';
 import path from 'path';
 import matter from 'gray-matter';
+
 import { Post } from './types';
 
 export const getPosts = async (): Promise<Post[]> => {
@@ -27,8 +28,8 @@ export const getPosts = async (): Promise<Post[]> => {
         tags,
         summary,
         content,
-      };
-    })
+      } as Post;
+    }),
   );
 
   return posts;

@@ -1,8 +1,10 @@
 'use client';
 
-import { useNavStore } from '../../stores/navStore';
-import ToggleTheme from '../ToggleTheme';
 import { Bars3Icon } from '@heroicons/react/24/solid';
+
+import { useNavStore } from '@/stores/navStore';
+import ToggleTheme from '../ToggleTheme';
+
 const Header = () => {
   const setIsOpen = useNavStore((state) => state.setIsOpen);
 

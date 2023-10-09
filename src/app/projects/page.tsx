@@ -1,6 +1,7 @@
 import { Suspense } from 'react';
-import ProjectsShowcase from '../../components/ProjectsShowcase';
-import ogImage from '../../lib/ogImage';
+
+import ogImage from '@/lib/ogImage';
+import ProjectsShowcase from '@/components/ProjectsShowcase';
 
 export const metadata = {
   title: 'Projects',
@@ -11,7 +12,7 @@ export const metadata = {
   },
 };
 
-export default async function Page() {
+export default function Page() {
   return (
     <div className="flex flex-col items-start">
       <h1 className="text-3xl font-bold md:text-5xl">Projects</h1>
@@ -20,7 +21,6 @@ export default async function Page() {
         on professionally and things I built for fun in my free time.
       </p>
       <Suspense fallback={null}>
-        {/* @ts-expect-error Async Server Component */}
         <ProjectsShowcase />
       </Suspense>
     </div>

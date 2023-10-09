@@ -1,12 +1,14 @@
-import { format } from 'date-fns';
-import ViewsDisplay from '../../../components/ViewsDisplay';
-import { getPosts } from '../../../lib/blog';
-import { markdownToHtml } from '../../../lib/markdown';
-import { notFound } from 'next/navigation';
-import { Post } from '../../../lib/types';
+import { Suspense } from 'react';
 import type { Metadata } from 'next';
-import ogImage from '../../../lib/ogImage';
-import { getOrigin } from '../../../lib/getOrigin';
+import { notFound } from 'next/navigation';
+import { format } from 'date-fns';
+
+import { getPosts } from '@/lib/blog';
+import { getOrigin } from '@/lib/getOrigin';
+import { markdownToHtml } from '@/lib/markdown';
+import ogImage from '@/lib/ogImage';
+import { Post } from '@/lib/types';
+import ViewsDisplay from '@/components/ViewsDisplay';
 
 export async function generateMetadata({
   params: { slug },
@@ -15,7 +17,7 @@ export async function generateMetadata({
 }): Promise<Metadata | undefined> {
   const posts = (await getPosts()) || [];
 
-  let post = posts.find((post) => post.slug === slug);
+  const post = posts.find((post) => post.slug === slug);
 
   if (!post) return;
 
@@ -62,7 +64,11 @@ const Page = async ({ params: { slug } }: { params: { slug: string } }) => {
         <p className="my-4 text-center text-gray-600 dark:text-gray-300">
           {format(new Date(post.created), 'PPP')}
           {' • '}
-          {<ViewsDisplay slug={post.slug} increment={true} />}
+          {
+            <Suspense fallback={<span>...</span>}>
+              <ViewsDisplay slug={slug} increment={true} />
+            </Suspense>
+          }
         </p>
         {post.updated && (
           <p className="my-4 text-center text-gray-600 dark:text-gray-300">
@@ -73,7 +79,7 @@ const Page = async ({ params: { slug } }: { params: { slug: string } }) => {
           {post.tags.map((tag) => (
             <span
               key={tag}
-              className="mr-2 mb-2 inline-block rounded-full bg-gray-200 px-3 py-1 text-sm font-semibold text-gray-700"
+              className="mb-2 mr-2 inline-block rounded-full bg-gray-200 px-3 py-1 text-sm font-semibold text-gray-700"
             >
               {tag}
             </span>

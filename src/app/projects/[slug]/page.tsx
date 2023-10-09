@@ -1,12 +1,13 @@
-import { markdownToHtml } from '../../../lib/markdown';
-import { notFound } from 'next/navigation';
-import { Project } from '../../../lib/types';
-import { getProjects } from '../../../lib/projects';
 import { Metadata } from 'next';
-import ogImage from '../../../lib/ogImage';
-import { getOrigin } from '../../../lib/getOrigin';
+import { notFound } from 'next/navigation';
 import { format } from 'date-fns';
-import { ExternalLink } from '../../../components/ExternalLink';
+
+import { getOrigin } from '@/lib/getOrigin';
+import { markdownToHtml } from '@/lib/markdown';
+import ogImage from '@/lib/ogImage';
+import { getProjects } from '@/lib/projects';
+import { Project } from '@/lib/types';
+import { ExternalLink } from '@/components/ExternalLink';
 
 export async function generateMetadata({
   params: { slug },
@@ -15,7 +16,7 @@ export async function generateMetadata({
 }): Promise<Metadata | undefined> {
   const projects = (await getProjects()) || [];
 
-  let project = projects.find((project) => project.slug === slug);
+  const project = projects.find((project) => project.slug === slug);
 
   if (!project) return;
 
@@ -71,7 +72,7 @@ const Page = async ({ params: { slug } }: { params: { slug: string } }) => {
           {project.tags.map((tag) => (
             <span
               key={tag}
-              className="mr-2 mb-2 inline-block rounded-full bg-gray-200 px-3 py-1 text-sm font-semibold text-gray-700"
+              className="mb-2 mr-2 inline-block rounded-full bg-gray-200 px-3 py-1 text-sm font-semibold text-gray-700"
             >
               {tag}
             </span>

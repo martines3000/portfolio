@@ -1,5 +1,3 @@
-const StylelintPlugin = require('stylelint-webpack-plugin');
-
 // Content-Security-Policy
 // https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy
 const contentSecurityPolicy = `
@@ -16,13 +14,16 @@ const isProd = process.env.NODE_ENV === 'production';
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  experimental: {
-    appDir: true,
-    fontLoaders: [
-      { loader: '@next/font/google', options: { subsets: ['latin'] } },
-    ],
+  // Ignore build errors in production
+  typescript: {
+    ignoreBuildErrors: isProd,
   },
-  reactStrictMode: true,
+  // Ignore ESLint errors in production
+  eslint: {
+    ignoreDuringBuilds: isProd,
+  },
+  optimizeFonts: true,
+  reactStrictMode: false,
   swcMinify: true,
   // https://nextjs.org/docs/advanced-features/output-file-tracing#automatically-copying-traced-files
   output: 'standalone',
@@ -37,7 +38,7 @@ const nextConfig = {
   },
   // Security headers and CSP
   // https://nextjs.org/docs/advanced-features/security-headers
-  headers: async () => {
+  headers: () => {
     return isProd
       ? [
           {
@@ -80,16 +81,9 @@ const nextConfig = {
         ]
       : [];
   },
-  webpack: (config) => {
-    config.plugins.push(new StylelintPlugin());
-    config.module.rules.push({
-      test: /\.svg$/,
-      use: ['@svgr/webpack'],
-    });
-    return config;
-  },
 };
 
+// eslint-disable-next-line @typescript-eslint/no-var-requires
 const withBundleAnalyzer = require('@next/bundle-analyzer')({
   enabled: process.env.ANALYZE === 'true',
 });

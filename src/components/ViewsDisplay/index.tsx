@@ -1,32 +1,29 @@
-'use client';
+import { getOrigin } from '@/lib/getOrigin';
+import { Views } from '@/lib/types';
 
-import { useEffect } from 'react';
-import { Views } from '../../lib/types';
-import useSWR from 'swr';
-import fetcher from '../../lib/fetcher';
-
-type ViewsDisplayProps = {
+interface ViewsDisplayProps {
   slug: string;
   increment?: boolean;
-};
+}
 
-const ViewsDisplay = ({ slug, increment }: ViewsDisplayProps) => {
-  // Fetching all views makes less requests (also reading from cache is improved)
-  const { data } = useSWR<Views[]>(`/api/views`, fetcher);
-  const currentBlogData = data && data.find((view) => view.id === slug);
-  const views = currentBlogData ? currentBlogData.count : 0;
+const ViewsDisplay = async ({ slug, increment }: ViewsDisplayProps) => {
+  try {
+    // Fetching all views makes less requests (also reading from cache is improved)
+    const response = await fetch(`${getOrigin()}/api/views`);
+    const data = (await response.json()) as Views[];
 
-  useEffect(() => {
-    const incrementView = () => {
-      fetch(`/api/views/${slug}`, {
+    if (increment) {
+      await fetch(`${getOrigin()}/api/views/${slug}`, {
         method: 'POST',
       });
-    };
+    }
 
-    if (increment) incrementView();
-  }, [slug, increment]);
-
-  return <span>{`${data ? views : '...'} views`}</span>;
+    const currentBlogData = data?.find((view) => view.id === slug);
+    const views = currentBlogData ? currentBlogData.count : 0;
+    return <span>{`${data ? views : '...'} views`}</span>;
+  } catch (e) {
+    return <span>...</span>;
+  }
 };
 
 export default ViewsDisplay;

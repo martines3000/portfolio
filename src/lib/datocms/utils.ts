@@ -1,9 +1,9 @@
-import { GraphQLClient } from 'graphql-request';
+import { GraphQLClient, Variables } from 'graphql-request';
 
-const API_URL = process.env.DATOCMS_API_ENDPOINT as string;
-const API_TOKEN = process.env.DATOCMS_API_TOKEN as string;
+const API_URL = process.env.DATOCMS_API_ENDPOINT!;
+const API_TOKEN = process.env.DATOCMS_API_TOKEN!;
 
-export function request(query: string, variables?: unknown) {
+export function request(query: string, variables?: Variables) {
   const headers = {
     authorization: `Bearer ${API_TOKEN}`,
     'X-Include-Drafts': 'true',

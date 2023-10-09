@@ -1,14 +1,15 @@
 import clsx from 'clsx';
+
 import Popover from '../Popover';
 
 export const chipColors = ['green', 'yellow', 'red', 'gray', 'blue'] as const;
 
-type ChipProps = {
+interface ChipProps {
   label: string;
   color: (typeof chipColors)[number];
   description?: string;
   className?: string;
-};
+}
 
 const Chip = ({ label, color, description, className }: ChipProps) => {
   const colorVariants = {
@@ -27,7 +28,7 @@ const Chip = ({ label, color, description, className }: ChipProps) => {
         <button
           className={clsx(
             colorVariants[color],
-            'cursor-pointer select-none rounded-full border-2 py-1 px-3 text-sm font-medium'
+            'cursor-pointer select-none rounded-full border-2 px-3 py-1 text-sm font-medium',
           )}
         >
           {label}
@@ -40,7 +41,7 @@ const Chip = ({ label, color, description, className }: ChipProps) => {
       className={clsx(
         className,
         colorVariants[color],
-        'select-none rounded-full border-2 py-1 px-3 text-sm font-medium'
+        'select-none rounded-full border-2 px-3 py-1 text-sm font-medium',
       )}
     >
       {label}

@@ -1,7 +1,9 @@
 'use client';
+
 import { useEffect, useMemo, useState } from 'react';
-import { PostPreview } from '../../components/PostPreview';
-import { Post } from '../../lib/types';
+
+import { Post } from '@/lib/types';
+import { PostPreview } from '@/components/PostPreview';
 
 const Blog = ({ posts }: { posts: Post[] }) => {
   const [search, setSearch] = useState('');
@@ -9,9 +11,9 @@ const Blog = ({ posts }: { posts: Post[] }) => {
   const filteredPosts = useMemo(
     () =>
       posts.filter((post) =>
-        post.title.toLowerCase().includes(search.toLowerCase())
+        post.title.toLowerCase().includes(search.toLowerCase()),
       ),
-    [search, posts]
+    [search, posts],
   );
 
   useEffect(() => {

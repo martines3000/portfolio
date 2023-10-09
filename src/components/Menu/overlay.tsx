@@ -1,4 +1,4 @@
-import { useNavStore } from '../../stores/navStore';
+import { useNavStore } from '@/stores/navStore';
 
 export function SidebarOverlay() {
   const { isOpen, setIsOpen } = useNavStore();

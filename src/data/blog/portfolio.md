@@ -54,7 +54,7 @@ export const getPosts = async (): Promise<Post[]> => {
         summary,
         content,
       };
-    })
+    }),
   );
 
   return posts;

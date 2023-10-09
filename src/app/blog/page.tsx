@@ -1,7 +1,8 @@
-import { Metadata } from 'next';
 import { Suspense } from 'react';
-import BlogPosts from '../../components/BlogPosts';
-import ogImage from '../../lib/ogImage';
+import { Metadata } from 'next';
+
+import ogImage from '@/lib/ogImage';
+import BlogPosts from '@/components/BlogPosts';
 
 export const metadata: Metadata = {
   title: 'Blog',
@@ -12,7 +13,7 @@ export const metadata: Metadata = {
   },
 };
 
-export default async function Page() {
+export default function Page() {
   return (
     <div className="flex flex-col items-start">
       <h1 className="text-3xl font-bold md:text-5xl">Blog</h1>
@@ -24,7 +25,6 @@ export default async function Page() {
         below. Thanks for stopping by!
       </p>
       <Suspense fallback={null}>
-        {/* @ts-expect-error Async Server Component */}
         <BlogPosts />
       </Suspense>
     </div>
