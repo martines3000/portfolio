@@ -13,7 +13,8 @@ export const metadata: Metadata = {
   },
 };
 
-export default function Page() {
+export default function Page({ searchParams }: { searchParams: any }) {
+  const search = searchParams?.search ?? '';
   return (
     <div className="flex flex-col items-start">
       <h1 className="text-3xl font-bold md:text-5xl">Blog</h1>
@@ -25,7 +26,7 @@ export default function Page() {
         below. Thanks for stopping by!
       </p>
       <Suspense fallback={null}>
-        <BlogPosts />
+        <BlogPosts search={search.toLowerCase()} />
       </Suspense>
     </div>
   );
