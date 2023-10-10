@@ -11,6 +11,7 @@ specifiers:
   '@svgr/webpack': ^8.1.0
   '@tailwindcss/line-clamp': ^0.4.4
   '@tailwindcss/typography': ^0.5.10
+  '@types/lodash.debounce': ^4.0.7
   '@types/marked': ^4.0.8
   '@types/node': 20.8.4
   '@types/react': 18.2.27
@@ -31,6 +32,7 @@ specifiers:
   highlight.js: ^11.6.0
   husky: ^8.0.2
   lint-staged: ^14.0.1
+  lodash.debounce: ^4.0.8
   marked: ^4.2.2
   motion: ^10.16.4
   next: 13.5.4
@@ -68,6 +70,7 @@ dependencies:
   graphql-request: 6.1.0_graphql@16.8.1
   gray-matter: 4.0.3
   highlight.js: 11.9.0
+  lodash.debounce: 4.0.8
   marked: 4.3.0
   motion: 10.16.4
   next: 13.5.4_gewzw7coau2uk5vixsbhkmwptu
@@ -87,6 +90,7 @@ devDependencies:
   '@ianvs/prettier-plugin-sort-imports': 4.1.0_prettier@3.0.3
   '@svgr/webpack': 8.1.0_typescript@5.2.2
   '@tailwindcss/typography': 0.5.10_tailwindcss@3.3.3
+  '@types/lodash.debounce': 4.0.7
   '@types/marked': 4.3.2
   '@types/node': 20.8.4
   '@types/react': 18.2.27
@@ -2561,6 +2565,16 @@ packages:
 
   /@types/json5/0.0.29:
     resolution: {integrity: sha512-dRLjCWHYg4oaA77cxO64oO+7JwCwnIzkZPdrrC71jQmQtlhM556pwKo5bUzqvZndkVbeFLIIi+9TC40JNF5hNQ==}
+    dev: true
+
+  /@types/lodash.debounce/4.0.7:
+    resolution: {integrity: sha512-X1T4wMZ+gT000M2/91SYj0d/7JfeNZ9PeeOldSNoE/lunLeQXKvkmIumI29IaKMotU/ln/McOIvgzZcQ/3TrSA==}
+    dependencies:
+      '@types/lodash': 4.14.199
+    dev: true
+
+  /@types/lodash/4.14.199:
+    resolution: {integrity: sha512-Vrjz5N5Ia4SEzWWgIVwnHNEnb1UE1XMkvY5DGXrAeOGE9imk0hgTHh5GyDjLDJi9OTCn9oo9dXH1uToK1VRfrg==}
     dev: true
 
   /@types/marked/4.3.2:
@@ -5121,7 +5135,6 @@ packages:
 
   /lodash.debounce/4.0.8:
     resolution: {integrity: sha512-FT1yDzDYEoYWhnSGnpE/4Kj1fLZkDFyqRb7fNt6FdYOSxlUWAtp42Eh6Wb0rGIv/m9Bgo7x4GhQbm5Ys4SG5ow==}
-    dev: true
 
   /lodash.escape/4.0.1:
     resolution: {integrity: sha512-nXEOnb/jK9g0DYMr1/Xvq6l5xMD7GDG55+GSYIYmS0G4tBk/hURD4JR9WCavs04t33WmJx9kCyp9vJ+mr4BOUw==}
