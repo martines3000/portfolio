@@ -1,6 +1,7 @@
 /* eslint-disable @next/next/no-css-tags */
 import '../styles/globals.css';
 
+import { Metadata } from 'next';
 import { IBM_Plex_Sans } from 'next/font/google';
 import clsx from 'clsx';
 
@@ -18,8 +19,9 @@ const ibm_plex_sans = IBM_Plex_Sans({
   variable: '--font-ibm-plex-sans',
 });
 
-// https://beta.nextjs.org/docs/api-reference/metadata
-export const metadata = {
+// https://nextjs.org/docs/api-reference/metadata
+export const metadata: Metadata = {
+  metadataBase: new URL('https://portfolio.skippy-ai.com'),
   title: {
     default: 'Martin Domajnko',
     template: '%s | Martin Domajnko',
@@ -32,13 +34,14 @@ export const metadata = {
     siteName: 'Martin Domajnko',
     images: [
       {
-        url: 'https://portfolio.skippy-ai.com/api/og',
+        url: '/api/og',
         width: 1920,
         height: 1080,
       },
     ],
     locale: 'en-US',
     type: 'website',
+    countryName: 'Slovenia',
   },
   robots: {
     index: true,
