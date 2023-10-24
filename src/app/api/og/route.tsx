@@ -1,19 +1,16 @@
 /* eslint-disable @next/next/no-img-element */
-import { NextRequest } from 'next/server';
-import { ImageResponse } from '@vercel/og';
+import { ImageResponse } from 'next/server';
 
-export const config = {
-  runtime: 'edge',
-};
+export const runtime = 'edge';
 
-const font = fetch(
-  new URL('../../../public/fonts/Karla-Bold.ttf', import.meta.url),
-).then((res) => res.arrayBuffer());
-
-export default async function handler(req: NextRequest) {
-  const fontData = await font;
+export async function GET(req: Request) {
+  const font = fetch(
+    new URL('../../../../public/fonts/Karla-Bold.ttf', import.meta.url),
+  ).then((res) => res.arrayBuffer());
 
   try {
+    const fontData = await font;
+
     const { searchParams } = new URL(req.url);
 
     const hasTitle = searchParams.has('title');

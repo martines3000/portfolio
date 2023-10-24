@@ -13,8 +13,6 @@ const ViewsDisplay = async ({ slug, increment }: ViewsDisplayProps) => {
     const data = (await response.json()) as Views[];
 
     if (increment) {
-      console.log('incrementing');
-      console.log(getOrigin());
       await fetch(`${getOrigin()}/api/views/${slug}`, {
         method: 'POST',
       });
