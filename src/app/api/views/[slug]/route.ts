@@ -8,8 +8,6 @@ const CORS_HEADERS = {
   'Access-Control-Allow-Headers': 'Content-Type',
 };
 
-export const runtime = 'edge';
-
 export async function GET(
   _: NextRequest,
   { params: { slug } }: { params: { slug: string } },
