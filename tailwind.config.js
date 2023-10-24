@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
 const { fontFamily } = require('tailwindcss/defaultTheme');
 const colors = require('tailwindcss/colors');
 
@@ -24,9 +25,5 @@ module.exports = {
       },
     },
   },
-  plugins: [
-    require('@tailwindcss/line-clamp'),
-    require('@tailwindcss/typography'),
-    require('tailwindcss-radix')(),
-  ],
+  plugins: [require('@tailwindcss/typography'), require('tailwindcss-radix')()],
 };
