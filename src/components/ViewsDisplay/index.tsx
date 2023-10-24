@@ -1,8 +1,6 @@
 import { getOrigin } from '@/lib/getOrigin';
 import { Views } from '@/lib/types';
 
-export const dynamic = 'force-dynamic';
-
 interface ViewsDisplayProps {
   slug: string;
   increment?: boolean;
