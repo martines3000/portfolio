@@ -20,6 +20,7 @@ export const ExternalLink = ({ href, value }: ExternalLinkProps) => {
         stroke="currentColor"
         className="h-5 w-5 pl-1"
       >
+        <title>External link icon</title>
         <path
           stroke-linecap="round"
           stroke-linejoin="round"

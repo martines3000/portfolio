@@ -29,11 +29,23 @@ const nextConfig = {
   output: 'standalone',
   // https://nextjs.org/docs/messages/next-image-unconfigured-host
   images: {
-    domains: [
-      'www.datocms-assets.com',
-      'i.scdn.co',
-      'localhost',
-      'portfolio.skippy-ai.com',
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'i.scdn.co',
+      },
+      {
+        protocol: 'https',
+        hostname: 'portfolio.skippy-ai.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'www.datocms-assets.com',
+      },
+      {
+        protocol: 'http',
+        hostname: 'localhost',
+      },
     ],
   },
   // Security headers and CSP
@@ -42,33 +54,6 @@ const nextConfig = {
     return isProd
       ? [
           {
-            source: '/:path',
-            headers: [
-              {
-                key: 'X-DNS-Prefetch-Control',
-                value: 'on',
-              },
-              {
-                key: 'Strict-Transport-Security',
-                value: 'max-age=63072000; includeSubDomains; preload',
-              },
-              {
-                key: 'X-XSS-Protection',
-                value: '1; mode=block',
-              },
-              {
-                key: 'X-Frame-Options',
-                value: 'SAMEORIGIN',
-              },
-              {
-                key: 'X-Content-Type-Options',
-                value: 'nosniff',
-              },
-              {
-                key: 'Content-Security-Policy',
-                value: contentSecurityPolicy.replace(/\s{2,}/g, ' ').trim(),
-              },
-            ],
             source: '/(.*).(jpg|png|gif)',
             headers: [
               {

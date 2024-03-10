@@ -6,8 +6,7 @@
 - **Deployed with:** [Vercel](https://vercel.com/home)
 - **CMS:**: [DatoCMS](https://www.datocms.com/)
 - **CSS:** [Tailwind](https://tailwindcss.com/)
-- **DB:** [PlanetScale](https://planetscale.com/)
-- **ORM:** [Prisma](https://www.prisma.io/)
+- **DB:** [Supabase](https://supabase.com/)
 - **Markdown compiler**: [Marked](https://github.com/markedjs/marked)
 
 ### Inspired by

@@ -20,6 +20,7 @@ export interface Post {
 
 export interface Views {
   id: string;
+  slug: string;
   count: number;
 }
 

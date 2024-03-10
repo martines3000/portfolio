@@ -1,5 +1,5 @@
 import { getOrigin } from '@/lib/getOrigin';
-import { Views } from '@/lib/types';
+import type { Views } from '@/lib/types';
 
 interface ViewsDisplayProps {
   slug: string;
@@ -21,7 +21,7 @@ const ViewsDisplay = async ({ slug, increment }: ViewsDisplayProps) => {
       });
     }
 
-    const currentBlogData = data?.find((view) => view.id === slug);
+    const currentBlogData = data?.find((view) => view.slug === slug);
     const views = currentBlogData ? currentBlogData.count : 0;
     return <span>{`${data ? views : '...'} views`}</span>;
   } catch (e) {

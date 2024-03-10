@@ -2,7 +2,7 @@ import { Suspense } from 'react';
 import Link from 'next/link';
 import { format } from 'date-fns';
 
-import { Post } from '@/lib/types';
+import type { Post } from '@/lib/types';
 import ViewsDisplay from '@/components/ViewsDisplay';
 
 export const PostPreview = ({ title, slug, created, content }: Post) => {

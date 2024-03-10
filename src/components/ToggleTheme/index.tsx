@@ -27,9 +27,9 @@ const ToggleTheme = () => {
       aria-label="Theme toggle"
     >
       {resolvedTheme === 'dark' ? (
-        <MoonIcon className={`h-[14px] w-[14px] fill-current`} />
+        <MoonIcon className={'h-[14px] w-[14px] fill-current'} />
       ) : (
-        <SunIcon className={`h-[14px] w-[14px] fill-current`} />
+        <SunIcon className={'h-[14px] w-[14px] fill-current'} />
       )}
     </button>
   );

@@ -5,9 +5,8 @@ const { highlight, highlightAuto } = hl;
 
 // Inspired by:
 // styfle.dev - https://github.com/styfle/styfle.dev
-export function markdownToHtml(md: string, baseUrl?: string) {
+export function markdownToHtml(md: string) {
   return marked(md, {
-    baseUrl,
     highlight: (code, language) => {
       if (!language) {
         return highlightAuto(code).value;

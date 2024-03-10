@@ -1,4 +1,4 @@
-import { GraphQLClient, Variables } from 'graphql-request';
+import { GraphQLClient, type Variables } from 'graphql-request';
 
 const API_URL = process.env.DATOCMS_API_ENDPOINT!;
 const API_TOKEN = process.env.DATOCMS_API_TOKEN!;

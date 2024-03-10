@@ -7,7 +7,7 @@ import { getPosts } from '@/lib/blog';
 import { getOrigin } from '@/lib/getOrigin';
 import { markdownToHtml } from '@/lib/markdown';
 import ogImage from '@/lib/ogImage';
-import { Post } from '@/lib/types';
+import type { Post } from '@/lib/types';
 import ViewsDisplay from '@/components/ViewsDisplay';
 
 export async function generateMetadata({
@@ -91,7 +91,7 @@ const Page = async ({ params: { slug } }: { params: { slug: string } }) => {
           <div
             itemProp="articleBody"
             dangerouslySetInnerHTML={{ __html: post.content }}
-          ></div>
+          />
         </article>
       </div>
     </div>

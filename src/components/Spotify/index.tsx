@@ -2,7 +2,7 @@ import Image from 'next/image';
 import useSWR from 'swr';
 
 import fetcher from '@/lib/fetcher';
-import { NowPlayingSong } from '@/lib/types';
+import type { NowPlayingSong } from '@/lib/types';
 
 const Spotify = () => {
   const { data } = useSWR<NowPlayingSong>('/api/now-playing', fetcher);
@@ -32,6 +32,7 @@ const Spotify = () => {
             viewBox="0 0 496 512"
             className="text-white dark:text-black"
           >
+            <title>Spotify icon</title>
             <path
               fill="#1ed760"
               d="M248 8C111.1 8 0 119.1 0 256s111.1 248 248 248 248-111.1 248-248S384.9 8 248 8Z"

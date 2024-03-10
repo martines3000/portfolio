@@ -1,4 +1,4 @@
-import { Metadata } from 'next';
+import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { format } from 'date-fns';
 
@@ -6,7 +6,7 @@ import { getOrigin } from '@/lib/getOrigin';
 import { markdownToHtml } from '@/lib/markdown';
 import ogImage from '@/lib/ogImage';
 import { getProjects } from '@/lib/projects';
-import { Project } from '@/lib/types';
+import type { Project } from '@/lib/types';
 import { ExternalLink } from '@/components/ExternalLink';
 
 export async function generateMetadata({
@@ -92,7 +92,7 @@ const Page = async ({ params: { slug } }: { params: { slug: string } }) => {
           <div
             itemProp="articleBody"
             dangerouslySetInnerHTML={{ __html: project.content }}
-          ></div>
+          />
         </article>
       </div>
     </div>
