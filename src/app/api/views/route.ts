@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server';
 
-import { prisma } from '@/lib/prisma';
+import { createClient } from '@supabase/supabase-js';
+import type { Database } from '@/lib/supabase/database.types';
 
 const CORS_HEADERS = {
   'Access-Control-Allow-Origin': '*',
@@ -10,16 +11,14 @@ const CORS_HEADERS = {
 
 export async function GET() {
   try {
-    const views = await prisma.views.findMany();
+    const client = createClient<Database>(
+      process.env.NEXT_PUBLIC_SUPABASE_URL!,
+      process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
+    );
 
-    const serializedViews = views.map((view) => {
-      return {
-        ...view,
-        count: view.count.toString(),
-      };
-    });
+    const { data } = await client.from('views').select();
 
-    return new NextResponse(JSON.stringify(serializedViews || []));
+    return new NextResponse(JSON.stringify(data || []));
   } catch (err: any) {
     return new NextResponse(JSON.stringify({ message: err.message }), {
       status: 500,

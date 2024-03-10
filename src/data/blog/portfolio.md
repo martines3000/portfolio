@@ -1,8 +1,8 @@
 ---
 title: Portfolio website built with Next.js and Markdown
-created: '2023-02-23T08:00:00.000Z'
-summary: Building my portfolio website using Next.js 13, PlanetScale, Prisma, DatoCMS and Tailwind.
-tags: ['Next.js', 'Markdown', 'PlanetScale', 'Prisma', 'DatoCMS', 'Tailwind']
+created: '2024-03-10T11:52:37Z'
+summary: Building my portfolio website using Next.js 13, Supabase, DatoCMS and Tailwind.
+tags: ['Next.js', 'Markdown', 'Supabase', 'DatoCMS', 'Tailwind']
 ---
 
 ## Introduction
@@ -15,8 +15,7 @@ I would like to welcome you to my portfolio website. This project has been on my
 - **Deployed with:** [Vercel](https://vercel.com/home)
 - **CMS:**: [DatoCMS](https://www.datocms.com/)
 - **CSS:** [Tailwind](https://tailwindcss.com/)
-- **DB:** [PlanetScale](https://planetscale.com/)
-- **ORM:** [Prisma](https://www.prisma.io/)
+- **DB:** [Supabase](https://supabase.com/)
 - **Markdown compiler**: [Marked](https://github.com/markedjs/marked)
 
 ## A Focus on Simplicity and Maintainability

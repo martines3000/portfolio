@@ -186,11 +186,15 @@ export const OTHER = [
     name: 'Hardhat',
   },
   {
+    name: 'Supabase',
+  },
+  {
     name: 'Prisma',
   },
   {
     name: 'PlanetScale',
   },
+
   {
     name: 'MongoDB',
   },
