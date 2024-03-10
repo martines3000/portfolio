@@ -1,4 +1,4 @@
-import { NextRequest, NextResponse } from 'next/server';
+import { type NextRequest, NextResponse } from 'next/server';
 
 import { prisma } from '@/lib/prisma';
 
@@ -10,7 +10,7 @@ const CORS_HEADERS = {
 
 export async function GET(
   _: NextRequest,
-  { params: { slug } }: { params: { slug: string } },
+  { params: { slug } }: { params: { slug: string } }
 ) {
   try {
     if (!slug) {
@@ -31,7 +31,7 @@ export async function GET(
           'Content-Type': 'application/json',
           ...CORS_HEADERS,
         },
-      },
+      }
     );
   } catch (err: any) {
     return new NextResponse(JSON.stringify({ message: err.message }), {
@@ -45,7 +45,7 @@ export async function GET(
 
 export async function POST(
   _: NextRequest,
-  { params: { slug } }: { params: { slug: string } },
+  { params: { slug } }: { params: { slug: string } }
 ) {
   try {
     if (!slug) {
@@ -74,7 +74,7 @@ export async function POST(
           'Content-Type': 'application/json',
           ...CORS_HEADERS,
         },
-      },
+      }
     );
   } catch (err: any) {
     return new NextResponse(JSON.stringify({ message: err.message }), {

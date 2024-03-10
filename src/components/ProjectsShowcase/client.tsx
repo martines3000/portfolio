@@ -2,7 +2,7 @@
 
 import { useEffect, useMemo, useState } from 'react';
 
-import { Project } from '@/lib/types';
+import type { Project } from '@/lib/types';
 import ProjectCard from '../ProjectCard';
 
 const Projects = ({ projects }: { projects: Project[] }) => {
@@ -11,14 +11,14 @@ const Projects = ({ projects }: { projects: Project[] }) => {
   const filteredProjects = useMemo(
     () =>
       projects.filter((project) =>
-        project.title.toLowerCase().includes(search.toLowerCase()),
+        project.title.toLowerCase().includes(search.toLowerCase())
       ),
-    [search, projects],
+    [search, projects]
   );
 
   useEffect(() => {
     projects.sort((a, b) =>
-      new Date(a.created) < new Date(b.created) ? 1 : -1,
+      new Date(a.created) < new Date(b.created) ? 1 : -1
     );
   }, [projects]);
 
@@ -39,6 +39,7 @@ const Projects = ({ projects }: { projects: Project[] }) => {
           viewBox="0 0 24 24"
           stroke="currentColor"
         >
+          <title>Search icon</title>
           <path
             stroke-linecap="round"
             stroke-linejoin="round"

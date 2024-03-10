@@ -1,8 +1,8 @@
-import { readdir, readFile } from 'fs/promises';
-import path from 'path';
+import { readdir, readFile } from 'node:fs/promises';
+import path from 'node:path';
 import matter from 'gray-matter';
 
-import { Project } from './types';
+import type { Project } from './types';
 
 export const getProjects = async (): Promise<Project[]> => {
   const projectsDir = path.join(process.cwd(), 'src/data/projects');
@@ -40,7 +40,7 @@ export const getProjects = async (): Promise<Project[]> => {
         repository,
         website,
       } as Project;
-    }),
+    })
   );
 
   return projects;

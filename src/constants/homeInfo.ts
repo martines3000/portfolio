@@ -1,4 +1,4 @@
-import { chipColors } from '@/components/Chip';
+import type { chipColors } from '@/components/Chip';
 
 export const LANGUAGES: {
   name: string;

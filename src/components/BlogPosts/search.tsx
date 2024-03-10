@@ -49,6 +49,7 @@ export default function Search() {
         viewBox="0 0 24 24"
         stroke="currentColor"
       >
+        <title>Search icon</title>
         <path
           stroke-linecap="round"
           stroke-linejoin="round"

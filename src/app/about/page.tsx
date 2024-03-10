@@ -13,7 +13,7 @@ export const metadata = {
 export default async function Page() {
   const about = await getAboutInfo();
 
-  if (!about)
+  if (!about) {
     return (
       <div className="flex h-full w-full items-center justify-center">
         <h1 className="font-semibold">
@@ -21,6 +21,7 @@ export default async function Page() {
         </h1>
       </div>
     );
+  }
 
   const { content } = about;
 
@@ -33,7 +34,7 @@ export default async function Page() {
               className="main-content"
               itemProp="articleBody"
               dangerouslySetInnerHTML={{ __html: content }}
-            ></div>
+            />
           </article>
         </div>
       </div>

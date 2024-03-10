@@ -1,6 +1,6 @@
 import { getPosts } from '@/lib/blog';
 import { markdownToHtml } from '@/lib/markdown';
-import { Post } from '@/lib/types';
+import type { Post } from '@/lib/types';
 import { PostPreview } from '../PostPreview';
 import Search from './search';
 

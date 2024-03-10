@@ -1,5 +1,5 @@
 import { Suspense } from 'react';
-import { Metadata } from 'next';
+import type { Metadata } from 'next';
 
 import ogImage from '@/lib/ogImage';
 import BlogPosts from '@/components/BlogPosts';

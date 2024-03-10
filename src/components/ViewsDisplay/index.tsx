@@ -1,5 +1,5 @@
 import { getOrigin } from '@/lib/getOrigin';
-import { Views } from '@/lib/types';
+import type { Views } from '@/lib/types';
 
 interface ViewsDisplayProps {
   slug: string;

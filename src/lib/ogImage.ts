@@ -1,11 +1,11 @@
 import { getOrigin } from './getOrigin';
 
 const ogImage = ({ url, title }: { url?: string; title?: string }) => {
-  if (url && url.startsWith('https:')) {
+  if (url?.startsWith('https:')) {
     return url;
   }
 
-  if (url && url.startsWith('local:')) {
+  if (url?.startsWith('local:')) {
     return `${getOrigin()}/images/${url.replace('local:', '')}`;
   }
 

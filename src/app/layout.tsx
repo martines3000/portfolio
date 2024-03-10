@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/no-css-tags */
 import '../styles/globals.css';
 
-import { Metadata } from 'next';
+import type { Metadata } from 'next';
 import { IBM_Plex_Sans } from 'next/font/google';
 import clsx from 'clsx';
 
@@ -80,14 +80,14 @@ export default function RootLayout({
           media="(prefers-color-scheme: dark)"
           // @ts-ignore
           precedence="default"
-        ></link>
+        />
         <link
           href="/themes/github.css"
           rel="stylesheet"
           media="(prefers-color-scheme: light)"
           // @ts-ignore
           precedence="default"
-        ></link>
+        />
         <link rel="manifest" href="/manifest.json" />
         <link
           href="/icons/icon-16x16.png"
@@ -125,13 +125,13 @@ export default function RootLayout({
           type="image/png"
           sizes="512x512"
         />
-        <link rel="apple-touch-icon" href="/icons/icon-192x192.png"></link>
+        <link rel="apple-touch-icon" href="/icons/icon-192x192.png" />
         <meta name="theme-color" content="#000" />
       </head>
       <body
         className={clsx(
           `${ibm_plex_sans.variable} font-sans`,
-          'bg-white text-black dark:bg-black dark:text-white',
+          'bg-white text-black dark:bg-black dark:text-white'
         )}
       >
         <Providers>

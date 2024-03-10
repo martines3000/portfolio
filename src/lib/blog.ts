@@ -1,8 +1,8 @@
-import { readdir, readFile } from 'fs/promises';
-import path from 'path';
+import { readdir, readFile } from 'node:fs/promises';
+import path from 'node:path';
 import matter from 'gray-matter';
 
-import { Post } from './types';
+import type { Post } from './types';
 
 export const getPosts = async (): Promise<Post[]> => {
   const postDir = path.join(process.cwd(), 'src/data/blog');
@@ -29,7 +29,7 @@ export const getPosts = async (): Promise<Post[]> => {
         summary,
         content,
       } as Post;
-    }),
+    })
   );
 
   return posts;
