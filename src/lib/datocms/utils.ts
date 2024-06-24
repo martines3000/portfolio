@@ -10,6 +10,9 @@ export function request(query: string, variables?: Variables) {
     'X-Exclude-Invalid': 'true',
   };
 
-  const client = new GraphQLClient(API_URL, { headers });
+  const client = new GraphQLClient(API_URL, {
+    headers,
+    next: { revalidate: 86400 }, // 1 day
+  });
   return client.request(query, variables);
 }
