@@ -35,14 +35,14 @@ const ProjectCard = ({
         onClick={toggleClicked}
         className={clsx(
           'relative h-full w-full rounded-lg bg-gray-200 shadow-xl transition-transform duration-500 [transform-style:preserve-3d] dark:bg-gray-800',
-          clicked ? '[transform:rotateY(180deg)]' : ''
+          clicked ? '[transform:rotateY(180deg)]' : '',
         )}
       >
         <div className=" absolute h-64 w-full cursor-pointer select-none rounded-t-lg bg-inherit">
           <Image
             className={clsx(
               'rounded-t-lg object-cover',
-              clicked ? 'opacity-0 transition-all duration-500' : 'opacity-100'
+              clicked ? 'opacity-0 transition-all duration-500' : 'opacity-100',
             )}
             alt="Project image"
             src={
@@ -71,7 +71,7 @@ const ProjectCard = ({
             <h2
               className={clsx(
                 'text-center text-2xl font-semibold tracking-tight underline transition-transform duration-500 [transform-style:preserve-3d]',
-                clicked ? '[transform:rotateY(180deg)]' : ''
+                clicked ? '[transform:rotateY(180deg)]' : '',
               )}
             >
               {title}
@@ -81,7 +81,7 @@ const ProjectCard = ({
         <div className="absolute bottom-0 w-full">
           <div
             className={clsx(
-              'absolute -bottom-4 flex w-full justify-center gap-2 tracking-tight'
+              'absolute -bottom-4 flex w-full justify-center gap-2 tracking-tight',
             )}
           >
             {tags.map((tag) => (
@@ -89,7 +89,7 @@ const ProjectCard = ({
                 key={tag}
                 className={clsx(
                   'transition-transform duration-500 [transform-style:preserve-3d]',
-                  clicked ? '[transform:rotateY(180deg)]' : ''
+                  clicked ? '[transform:rotateY(180deg)]' : '',
                 )}
                 color="blue"
                 label={tag}

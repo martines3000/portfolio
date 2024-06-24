@@ -131,7 +131,7 @@ export default function RootLayout({
       <body
         className={clsx(
           `${ibm_plex_sans.variable} font-sans`,
-          'bg-white text-black dark:bg-black dark:text-white'
+          'bg-white text-black dark:bg-black dark:text-white',
         )}
       >
         <Providers>

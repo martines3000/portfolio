@@ -29,7 +29,7 @@ export const getPosts = async (): Promise<Post[]> => {
         summary,
         content,
       } as Post;
-    })
+    }),
   );
 
   return posts;

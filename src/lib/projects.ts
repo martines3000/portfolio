@@ -40,7 +40,7 @@ export const getProjects = async (): Promise<Project[]> => {
         repository,
         website,
       } as Project;
-    })
+    }),
   );
 
   return projects;

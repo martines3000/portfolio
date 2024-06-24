@@ -11,7 +11,7 @@ const CORS_HEADERS = {
 
 export async function GET(
   _: NextRequest,
-  { params: { slug } }: { params: { slug: string } }
+  { params: { slug } }: { params: { slug: string } },
 ) {
   try {
     if (!slug) {
@@ -20,7 +20,7 @@ export async function GET(
 
     const client = createClient<Database>(
       process.env.NEXT_PUBLIC_SUPABASE_URL!,
-      process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
+      process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
     );
 
     const { data } = await client
@@ -48,7 +48,7 @@ export async function GET(
 
 export async function POST(
   _: NextRequest,
-  { params: { slug } }: { params: { slug: string } }
+  { params: { slug } }: { params: { slug: string } },
 ) {
   try {
     if (!slug) {
@@ -57,7 +57,7 @@ export async function POST(
 
     const client = createClient<Database>(
       process.env.NEXT_PUBLIC_SUPABASE_URL!,
-      process.env.SUPABASE_SECRET_KEY!
+      process.env.SUPABASE_SECRET_KEY!,
     );
 
     const { data, error } = await client

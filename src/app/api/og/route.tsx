@@ -5,7 +5,7 @@ export const runtime = 'edge';
 
 export async function GET(req: Request) {
   const font = fetch(
-    new URL('../../../../public/fonts/Karla-Bold.ttf', import.meta.url)
+    new URL('../../../../public/fonts/Karla-Bold.ttf', import.meta.url),
   ).then((res) => res.arrayBuffer());
 
   try {
@@ -64,7 +64,7 @@ export async function GET(req: Request) {
             style: 'normal',
           },
         ],
-      }
+      },
     );
   } catch (e: unknown) {
     console.log(e);

@@ -11,14 +11,14 @@ const Projects = ({ projects }: { projects: Project[] }) => {
   const filteredProjects = useMemo(
     () =>
       projects.filter((project) =>
-        project.title.toLowerCase().includes(search.toLowerCase())
+        project.title.toLowerCase().includes(search.toLowerCase()),
       ),
-    [search, projects]
+    [search, projects],
   );
 
   useEffect(() => {
     projects.sort((a, b) =>
-      new Date(a.created) < new Date(b.created) ? 1 : -1
+      new Date(a.created) < new Date(b.created) ? 1 : -1,
     );
   }, [projects]);
 

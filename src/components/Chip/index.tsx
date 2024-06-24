@@ -29,7 +29,7 @@ const Chip = ({ label, color, description, className }: ChipProps) => {
           type="button"
           className={clsx(
             colorVariants[color],
-            'cursor-pointer select-none rounded-full border-2 px-3 py-1 text-sm font-medium'
+            'cursor-pointer select-none rounded-full border-2 px-3 py-1 text-sm font-medium',
           )}
         >
           {label}
@@ -42,7 +42,7 @@ const Chip = ({ label, color, description, className }: ChipProps) => {
       className={clsx(
         className,
         colorVariants[color],
-        'select-none rounded-full border-2 px-3 py-1 text-sm font-medium'
+        'select-none rounded-full border-2 px-3 py-1 text-sm font-medium',
       )}
     >
       {label}
