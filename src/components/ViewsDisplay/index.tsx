@@ -8,9 +8,8 @@ interface ViewsDisplayProps {
 
 const ViewsDisplay = async ({ slug, increment }: ViewsDisplayProps) => {
   try {
-    // Fetching all views makes less requests (also reading from cache is improved)
     const response = await fetch(`${getOrigin()}/api/views`, {
-      cache: 'no-cache',
+      next: { revalidate: 3600 },
     });
     const data = (await response.json()) as Views[];
 

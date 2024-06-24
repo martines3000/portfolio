@@ -1,7 +1,10 @@
 import { Suspense } from 'react';
 
 import ogImage from '@/lib/ogImage';
-import ProjectsShowcase from '@/components/ProjectsShowcase';
+import {
+  ProjectShowcaseSkeleton,
+  ProjectsShowcase,
+} from '@/components/ProjectsShowcase';
 
 export const metadata = {
   title: 'Projects',
@@ -20,7 +23,7 @@ export default function Page() {
         Welcome to my projects page! This is where I present projects I worked
         on professionally and things I built for fun in my free time.
       </p>
-      <Suspense fallback={null}>
+      <Suspense fallback={<ProjectShowcaseSkeleton />}>
         <ProjectsShowcase />
       </Suspense>
     </div>

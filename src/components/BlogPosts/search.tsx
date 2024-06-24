@@ -8,7 +8,6 @@ export default function Search() {
   const router = useRouter();
   const pathname = usePathname();
 
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [isPending, startTransition] = useTransition();
 
   const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {

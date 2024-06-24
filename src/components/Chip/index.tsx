@@ -1,6 +1,7 @@
 import clsx from 'clsx';
 
-import Popover from '../Popover';
+import Popover from '@/components/Popover';
+import { Skeleton } from '@/components/ui/skeleton';
 
 export const chipColors = ['green', 'yellow', 'red', 'gray', 'blue'] as const;
 
@@ -11,7 +12,7 @@ interface ChipProps {
   className?: string;
 }
 
-const Chip = ({ label, color, description, className }: ChipProps) => {
+export const Chip = ({ label, color, description, className }: ChipProps) => {
   const colorVariants = {
     green:
       'bg-green-200 text-green-800 dark:bg-green-800 dark:text-green-200 border-green-400 dark:border-green-400',
@@ -49,5 +50,3 @@ const Chip = ({ label, color, description, className }: ChipProps) => {
     </span>
   );
 };
-
-export default Chip;

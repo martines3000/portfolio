@@ -3,9 +3,10 @@
 import { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import clsx from 'clsx';
 
-import Chip from '../Chip';
+import { Chip } from '@/components/Chip';
+import { cn } from '@/lib/utils';
+import { Skeleton } from '../ui/skeleton';
 
 interface ProjectCardProps {
   slug: string;
@@ -28,19 +29,18 @@ const ProjectCard = ({
     setClicked((current) => !current);
   };
 
-  // 3D card with a shadow that flips on hover (Tailwind CSS)
   return (
     <div className="group relative h-96 w-64 [perspective:1000px]">
       <div
         onClick={toggleClicked}
-        className={clsx(
+        className={cn(
           'relative h-full w-full rounded-lg bg-gray-200 shadow-xl transition-transform duration-500 [transform-style:preserve-3d] dark:bg-gray-800',
-          clicked ? '[transform:rotateY(180deg)]' : '',
+          clicked && '[transform:rotateY(180deg)]',
         )}
       >
         <div className=" absolute h-64 w-full cursor-pointer select-none rounded-t-lg bg-inherit">
           <Image
-            className={clsx(
+            className={cn(
               'rounded-t-lg object-cover',
               clicked ? 'opacity-0 transition-all duration-500' : 'opacity-100',
             )}
@@ -58,7 +58,6 @@ const ProjectCard = ({
         </div>
         <div
           onClick={(e) => {
-            // TODO: Open project page
             e.stopPropagation();
           }}
           className="absolute bottom-0 left-0 flex h-2/6 w-full items-center justify-center p-4"
@@ -69,9 +68,9 @@ const ProjectCard = ({
             href={`/projects/${slug}`}
           >
             <h2
-              className={clsx(
+              className={cn(
                 'text-center text-2xl font-semibold tracking-tight underline transition-transform duration-500 [transform-style:preserve-3d]',
-                clicked ? '[transform:rotateY(180deg)]' : '',
+                clicked && '[transform:rotateY(180deg)]',
               )}
             >
               {title}
@@ -80,16 +79,16 @@ const ProjectCard = ({
         </div>
         <div className="absolute bottom-0 w-full">
           <div
-            className={clsx(
+            className={cn(
               'absolute -bottom-4 flex w-full justify-center gap-2 tracking-tight',
             )}
           >
             {tags.map((tag) => (
               <Chip
                 key={tag}
-                className={clsx(
+                className={cn(
                   'transition-transform duration-500 [transform-style:preserve-3d]',
-                  clicked ? '[transform:rotateY(180deg)]' : '',
+                  clicked && '[transform:rotateY(180deg)]',
                 )}
                 color="blue"
                 label={tag}
@@ -103,3 +102,11 @@ const ProjectCard = ({
 };
 
 export default ProjectCard;
+
+export const ProjectCardSkeleton = () => {
+  return (
+    <div className="relative">
+      <Skeleton className="h-96 w-64" />
+    </div>
+  );
+};

@@ -1,8 +1,8 @@
 import { Suspense } from 'react';
 
-import Chip from '@/components/Chip';
-import Avatar from '../components/Avatar';
-import AvatarLoading from '../components/Avatar/loading';
+import { Chip } from '@/components/Chip';
+import Avatar from '@/components/Avatar';
+import AvatarLoading from '@/components/Avatar/loading';
 import { FRAMEWORKS, LANGUAGES, OTHER, TOOLS } from '../constants/homeInfo';
 
 export const metadata = {

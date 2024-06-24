@@ -2,12 +2,13 @@ import Image from 'next/image';
 
 import { getAboutInfo } from '@/lib/datocms';
 import SocialIcon from '@/components/SocialIcon';
+import AvatarLoading from './loading';
 
 export default async function Avatar() {
   const about = await getAboutInfo();
 
   // Render skeleton
-  if (!about) return null;
+  if (!about) return <AvatarLoading />;
 
   const { profileimg, name, title } = about;
 
