@@ -8,9 +8,6 @@ import { ProjectCardSkeleton } from '@/components/ProjectCard';
 const getProjectsWithHtml = async (): Promise<Project[]> => {
   const projects = (await getProjects()) || [];
 
-  // SLeep 3s to simulate loading
-  await new Promise((r) => setTimeout(r, 3000));
-
   return projects.map((project) => ({
     ...project,
     content: markdownToHtml(project.summary),
