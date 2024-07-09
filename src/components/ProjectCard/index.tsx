@@ -7,6 +7,7 @@ import Link from 'next/link';
 import { Chip } from '@/components/Chip';
 import { cn } from '@/lib/utils';
 import { Skeleton } from '../ui/skeleton';
+import { ProjectImage } from './ProjectImage';
 
 interface ProjectCardProps {
   slug: string;
@@ -38,20 +39,8 @@ const ProjectCard = ({
           clicked && '[transform:rotateY(180deg)]',
         )}
       >
-        <div className=" absolute h-64 w-full cursor-pointer select-none rounded-t-lg bg-inherit">
-          <Image
-            className={cn(
-              'rounded-t-lg object-cover',
-              clicked ? 'opacity-0 transition-all duration-500' : 'opacity-100',
-            )}
-            alt="Project image"
-            src={
-              image.startsWith('local:')
-                ? image.replace('local:', '/images/')
-                : image
-            }
-            fill
-          />
+        <div className="absolute h-64 w-full cursor-pointer select-none rounded-t-lg bg-inherit">
+          <ProjectImage src={image} clicked={clicked} />
         </div>
         <div className="h-64 w-full cursor-pointer select-none text-clip rounded-t-lg border-b-2 border-sky-800 bg-inherit p-4 text-left [transform:rotateY(180deg)] [backface-visibility:hidden]">
           <p className="line-clamp-9">{description}</p>

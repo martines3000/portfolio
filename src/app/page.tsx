@@ -1,8 +1,5 @@
-import { Suspense } from 'react';
-
 import { Chip } from '@/components/Chip';
 import Avatar from '@/components/Avatar';
-import AvatarLoading from '@/components/Avatar/loading';
 import { FRAMEWORKS, LANGUAGES, OTHER, TOOLS } from '../constants/homeInfo';
 
 export const metadata = {
@@ -30,9 +27,7 @@ export default function Page() {
           </p>
         </div>
         <div className="md:min-w-max">
-          <Suspense fallback={<AvatarLoading />}>
-            <Avatar />
-          </Suspense>
+          <Avatar />
         </div>
       </div>
       <div className="mt-8 sm:mt-6 ">
