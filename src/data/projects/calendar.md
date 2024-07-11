@@ -61,7 +61,7 @@ Key features:
 - This label maintains user privacy while indicating court availability.
 - Logged-in users see a bottom navigation bar for quick page switching, while regular visitors only view the calendar
 
-The calendar offers multiple viewing options to enhance usability across devices. A 3 day view optimized for mobile and a monlthy list view, ideal for lenger-term planning:
+The calendar offers multiple viewing options to enhance usability across devices. A 3 day view optimized for mobile and a monlthy list view, ideal for longer-term planning:
 
 ![Calendar Interface 3 days](/images/calendar/calendar-home-2.png)
 
