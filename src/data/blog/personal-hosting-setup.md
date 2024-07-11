@@ -1,7 +1,7 @@
 ---
 title: Personal hosting setup
 created: '2024-07-10T07:11:37Z'
-summary:I simplified the hosting of my personal projects using an automated NGINX reverse proxy and Docker.
+summary: I simplified the hosting of my personal projects using an automated NGINX reverse proxy and Docker.
 tags: ['Docker', 'Self-hosting', 'Oracle', "NGINX", "Cloudflare"]
 ---
 
