@@ -4,7 +4,7 @@ created: '2024-07-11T13:00:00.000Z'
 updated: '2024-07-11T13:00:00.000Z'
 summary: 'This is a straightforward calendar website that can be easily managed by non-technical individuals and shared with others.'
 tags: ['Next.js', 'Supabase', 'shadcn/ui']
-ogImage: 'local:projects/calendar.png'
+ogImage: 'local:calendar/calendar-home-1.png'
 website: ''
 repository: 'https://github.com/martines3000/calendar'
 ---
