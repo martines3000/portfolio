@@ -9,7 +9,7 @@ interface ViewsDisplayProps {
 const ViewsDisplay = async ({ slug, increment }: ViewsDisplayProps) => {
   try {
     const response = await fetch(`${getOrigin()}/api/views`, {
-      next: { revalidate: 3600 },
+      next: { revalidate: 60 },
     });
     const data = (await response.json()) as Views[];
 

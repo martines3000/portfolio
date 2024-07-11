@@ -8,7 +8,7 @@ export default function Search() {
   const router = useRouter();
   const pathname = usePathname();
 
-  const [isPending, startTransition] = useTransition();
+  const [_, startTransition] = useTransition();
 
   const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
     const term = e.target.value;
