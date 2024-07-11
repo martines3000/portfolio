@@ -53,7 +53,7 @@ The email address is used to notify users about expiring certificates. The acme-
 
 For easier management of all the run commands, I have created a private repo where I host all the setup scripts for my projects. A sample script for running one of my Rust projects, compiled to Wasm:
 
-![Docker run script](/images/acme-exmaple.png)
+![Docker run script](/images/acme-example.png)
 
 Furthermore, in addition to the two environment variables previously mentioned, I have set the `VIRTUAL_PORT` environment variable to the port number that the project exposes in the Docker container, in this instance, port 80.
 
