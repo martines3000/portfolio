@@ -4,7 +4,7 @@ created: '2023-02-23T08:00:00.000Z'
 updated: '2023-04-21T11:30:00.000Z'
 summary: 'Masca is a MetaMask Snap that adds support for SSI: it can manage DIDs, store VCs, and create the VPs. Masca works on existing MetaMask accounts to create new DIDs, without the need to create new private keys and worry about their security!'
 tags: ['SSI', 'Web3', 'MetaMask']
-ogImage: 'local:masca.png'
+ogImage: 'local:projects/masca.png'
 website: 'https://blockchain-lab-um.github.io/ssi-snap-docs/'
 repository: 'https://github.com/blockchain-lab-um/masca/tree/develop'
 ---

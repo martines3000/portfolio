@@ -3,7 +3,7 @@ title: Boids 3D
 created: '2023-03-18T08:00:00.000Z'
 summary: "A 3D implementation of Craig Reynold's Boids program to simulate the flocking behavior of birds."
 tags: ['Rust', 'Multithreading', 'Bevy']
-ogImage: 'local:boids3d.png'
+ogImage: 'local:projects/boids3d.png'
 website: 'https://ac3d.skippy-ai.com/'
 repository: 'https://github.com/martines3000/autonomous-characters-3d/tree/master'
 ---
@@ -32,4 +32,4 @@ The link to the Demo is at the top of the page.
 - Select the red ball and the boids will follow it
 - Move the selected ball with: `wasd`, `shift` (down) and `space` (up)
 
-![Screenshot of 2D simulation](/images/boids3d.png)
+![Screenshot of 2D simulation](/images/projects/boids3d.png)

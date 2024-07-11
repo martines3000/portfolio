@@ -4,7 +4,7 @@ created: '2024-07-09T11:00:00.000Z'
 updated: '2024-07-09T11:00:00.000Z'
 summary: 'EES (Ethereum Endorsement Service) is a decentralized platform empowering users to endorse and financially support one another, fostering a transparent social graph and reputation system.'
 tags: ['Web3', 'TheGraph', "Reputation"]
-ogImage: 'local:ees.png'
+ogImage: 'local:projects/ees.png'
 website: 'https:/endorse.fun'
 repository: 'https://github.com/lutralabs/ees'
 ---
@@ -21,11 +21,11 @@ Every endorsement is recorded on-chain, fostering a **transparent and trustle
 
 ## Endorsement flow
 
-![Diagram of the endorsement flow](/images/ees-flow.png)
+![Diagram of the endorsement flow](/images/ees/ees-flow.png)
 
 ## Demo
 
-![Diagram of the endorsement flow](/images/ees-demo.gif)
+![Diagram of the endorsement flow](/images/ees/ees-demo.gif)
 
 ## Tecnologies used
 
@@ -46,16 +46,16 @@ Every endorsement is recorded on-chain, fostering a **transparent and trustle
 
 ### Profile view
 
-![Profile view](/images/ees-profile.png)
+![Profile view](/images/ees/ees-profile.png)
 
 ### Explorer view
 
-![Explorer view](/images/ees-explorer.png)
+![Explorer view](/images/ees/ees-explorer.png)
 
 ### Endorsement view
 
-![Endorsement view](/images/ees-endorsement.png)
+![Endorsement view](/images/ees/ees-endorsement.png)
 
 ### Social Graph
 
-![Social graph](/images/ees-social-graph.png)
+![Social graph](/images/ees/ees-social-graph.png)

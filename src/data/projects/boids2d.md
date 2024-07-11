@@ -3,7 +3,7 @@ title: Boids 2D
 created: '2023-03-18T08:00:00.000Z'
 summary: "An implementation of Craig Reynold's Boids program to simulate the flocking behavior of birds. Also includes Gary Flake's fourth rule."
 tags: ['Rust', 'Octree', 'Bevy']
-ogImage: 'local:boids2d.png'
+ogImage: 'local:projects/boids2d.png'
 website: 'https://ac.skippy-ai.com/'
 repository: 'https://github.com/martines3000/autonomous-characters/tree/master'
 ---
@@ -37,4 +37,4 @@ The project has undergone further development to include new features. One of th
 
 The link to the Demo is at the top of the page. Hold `space` to spawn more boids or hold the `left mouse button` to make the boids follow it.
 
-![Screenshot of 2D simulation](/images/boids2d.png)
+![Screenshot of 2D simulation](/images/projects/boids2d.png)
